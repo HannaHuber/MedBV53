@@ -1,0 +1,15 @@
+function [ C ] = ourCov( D )
+%OURCOV Calculates covariance matrix C for dxn data matrix D
+%   d ... dimension
+%   n ... number of data points
+
+% Calculate mean
+mean = mean(D,2);
+
+diffToMean = D - repmat(mean, n);
+
+C = 
+
+
+end
+
