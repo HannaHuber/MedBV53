@@ -1,5 +1,7 @@
 function [ E, lambda ] = pca( D, percentage )
-%PCA computes the PCA of the data matrix D
+%PCA computes the PCA of the data matrix D dxn
+%   d ... dimension
+%   n ... number of data points
 %   E contains the Eigenvectors to the corresponding eigenvalues of lambda
 %   (which are in decending order)
 % percentage is not mandatory; if given the highest eigenvalues are given
@@ -7,9 +9,9 @@ function [ E, lambda ] = pca( D, percentage )
 % principal components
 
 % Step 1: Compute the empirical mean & subtract it from the data
-D_mm = D - ones(size(D,1),1)*mean(D);
+%D_mm = D - ones(size(D,1),1)*mean(D);
 % empirical covariance matrix
-C_D = cov(D_mm);
+C_D = ourCov(D);
 
 % Step 2: Compute eigenvalue decomposition of the covariance matrix
 [E,lambda] = eig(C_D,'vector');
