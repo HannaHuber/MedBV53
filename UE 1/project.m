@@ -33,7 +33,8 @@ elimCoords = setdiff(1:d, sub);
 xElim = xProj(elimCoords, :);
 
 % Embed subspace components in d-dimensional space by adding zeros
-xSubD = [xSub; zeros(d-k,n)];
+xSubD = zeros(d,n);
+xSubD(sub,:) = xSub; 
 
 % Reconstruct data
 xRec = (A') \ xSubD + repmat(m, 1, n);
