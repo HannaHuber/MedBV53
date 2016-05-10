@@ -12,9 +12,6 @@ function [ xRec, err] = project( x, A, sub )
 % Get number of data points
 n = size(x, 2);
 
-% Get space dimension
-d = size(x, 1);
-
 % Get subspace dimension
 k = length(sub);
 
@@ -22,24 +19,21 @@ k = length(sub);
 m = mean(x, 2);
 xCentered = x - repmat(m, 1, n);
 
-% Project data (contains subspace AND eliminated components)
+% Project data
 xProj = A' * xCentered;
 
-% Subspace components
-xSub = xProj(sub, :);
+% Data projected to subspace
+p = xProj(sub, :);
 
-% Eliminated components
-elimCoords = setdiff(1:d, sub);
-xElim = xProj(elimCoords, :);
+% Embed in d-dimensional space by adding zeros
+pD = [p; zeros(d-k,n)];
 
-% Embed subspace components in d-dimensional space by adding zeros
-xSubD = [xSub; zeros(d-k,n)];
-
-% Reconstruct data
-xRec = (A') \ xSubD + repmat(m, 1, n);
+% Reconstruct projection
+xRec = (A') \ pD + repmat(m, 1, n);
 
 % Get mean error from eliminated coords
-err = mean(sqrt(sum(xElim.^2,1)));
+elimCoords = setdiff(1:d, sub);
+err = mean(sqrt(sum(xProj(elimCoords, :).^2,1)));
 
 end
 
