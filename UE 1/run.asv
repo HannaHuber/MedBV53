@@ -63,6 +63,8 @@ load daten3
 % 3D project to two main vectors
 
 %% Ex. 5 - Shape Modell
+
+pca
 clear all 
 close all
 

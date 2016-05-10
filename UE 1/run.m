@@ -63,6 +63,10 @@ load daten3d
 % 3D project to two main vectors
 
 %% Ex. 5 - Shape Modell
+
+load shapes
+
+[EShapes, lambdaShapes] = pcaShape(aligned);
 clear all 
 close all
 
