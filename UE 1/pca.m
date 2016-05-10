@@ -14,7 +14,8 @@ function [ E, lambda ] = pca( D, percentage )
 C_D = ourCov(D);
 
 % Step 2: Compute eigenvalue decomposition of the covariance matrix
-[E,lambda] = eig(C_D,'vector');
+[E,lambda] = eig(C_D);
+lambda = diag(lambda);
 % to get the output in descending order of eigenvalues & in case of 3D as
 % diag matrix
 E = fliplr(E);
