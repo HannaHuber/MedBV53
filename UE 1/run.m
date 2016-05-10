@@ -34,18 +34,28 @@ close all
 load daten
 
 data=data1';
-[E,l] = pca(data);
+[E1,l] = pca(data);
 plot2DPCA(data, mean(data), data, E, l, 1, 0)
 data=data2';
-[E,l] = pca(data);
+[E2,l] = pca(data);
 plot2DPCA(data, mean(data), data, E, l, 1, 0)
 data=data3';
-[E,l] = pca(data);
+[E3,l] = pca(data);
 plot2DPCA(data, mean(data), data, E, l, 1, 0)
 data=data4';
-[E,l] = pca(data);
+[E4,l] = pca(data);
 plot2DPCA(data, mean(data), data, E, l, 1, 0)
 
+%% Ex. 3 - Subspace projection
+
+% Project data3 to main vector
+p3Main = project(data3, E3(:,1));
+plot2DPCA(data3, mean(data3, 2), p3Main, E, l, 1, 0)
+
+% 2D project to second vector
+p3Second = project(data3, E3(:,2));
+
+% 3D project to two main vectors
 %% Ex. 5 - Shape Modell
 clear all 
 close all
