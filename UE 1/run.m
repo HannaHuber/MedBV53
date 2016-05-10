@@ -52,7 +52,7 @@ plot2DPCA(data3', mean(p3Main, 2)', p3Main', E3, l3, 1, 1)
 [p3Second, errSecond] = project(data3, E3, 2);
 plot2DPCA(data3', mean(p3Second, 2)', p3Second', E3, l3, 1, 1)
 
-%% Ex. 4 - Subspace projection (3D -> 2D)
+%% Ex. 4 - 3D data
 
 clear all
 close all
@@ -60,7 +60,13 @@ close all
 % Load 3D data
 load daten3d
 
-% 3D project to two main vectors
+% PCA
+[E3D, l3D] = pca(data);
+plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 0);
+
+% Project to two main vectors
+[p, err] = project(data, E3D, [1 2]);
+plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 1);
 
 %% Ex. 5 - Shape Modell
 
