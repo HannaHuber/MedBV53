@@ -69,11 +69,12 @@ plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 0);
 plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 1);
 
 %% Ex. 5 - Shape Modell
-
-load shapes
-
-[EShapes, lambdaShapes] = pcaShape(aligned);
 clear all 
 close all
 
 load shapes
+
+% Calculate the eigenvectors, eigenvalues and the mean
+[EShapes, lambdaShapes, meanShapes] = pcaShape(aligned);
+% Plot the mean and the first mode
+plotShape(EShapes, lambdaShapes, meanShapes)

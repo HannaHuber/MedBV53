@@ -1,4 +1,4 @@
-function [ E, lambda ] = pcaShape( aligned )
+function [ E, lambda , meanShape ] = pcaShape( aligned )
 %pcaShape computes PCA of the shape data in aligned that is given as
 %'nPoints x nDimensions x nShapes'
 %   n ... number of data points
@@ -20,5 +20,7 @@ newShape = reshape(permute(aligned,[2,1,3]),n*d,s);
 % compute PCA
 [E, lambda] = pca(newShape);
 
+% compute mean
+meanShape = mean(newShape,2);
 end
 
