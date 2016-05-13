@@ -1,4 +1,4 @@
-function [ xRec, err] = project( x, A, sub )
+function [ xRec, xSub, err] = project( x, A, sub )
 %PROJECT project data points onto subspace and transform to original
 %        coordinate system
 % Input:    x      ...  dxn matrix of data points

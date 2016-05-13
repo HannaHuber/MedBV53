@@ -45,11 +45,11 @@ plot2DPCA(data4', mean(data4,2)', data4', E4, l4, 1, 0)
 %% Ex. 3 - Subspace projection (2D -> 1D)
 
 % Project + reconstruct data3 to main vector
-[p3Main, errMain] = project(data3, E3, 1);
+[p3Main, ~, errMain] = project(data3, E3, 1);
 plot2DPCA(data3', mean(p3Main, 2)', p3Main', E3, l3, 1, 1)
 
 % Project + reconstruct data3 to second vector
-[p3Second, errSecond] = project(data3, E3, 2);
+[p3Second, ~, errSecond] = project(data3, E3, 2);
 plot2DPCA(data3', mean(p3Second, 2)', p3Second', E3, l3, 1, 1)
 
 %% Ex. 4 - 3D data
@@ -65,11 +65,11 @@ load daten3d
 plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 0);
 
 % Project to two main vectors
-[p, err] = project(data, E3D, [1 2]);
+[p, ~, err] = project(data, E3D, [1 2]);
 plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 1);
 
 %% Ex. 5 - Shape Modell
-clear all 
+% clear all 
 close all
 
 load shapes
