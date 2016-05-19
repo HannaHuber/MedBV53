@@ -1,4 +1,4 @@
-% *** MedBV UE1 - Group 53 ***
+% *** MedBV UE1 - Group 16 ***
 
 %% Ex. 1 - Covariance
 clear all
@@ -69,12 +69,28 @@ plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 0);
 plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 1);
 
 %% Ex. 5 - Shape Modell
-% clear all 
+clear all 
 close all
 
 load shapes
 
-% Calculate the eigenvectors, eigenvalues and the mean
+% a) Calculate the eigenvectors, eigenvalues and the mean
 [EShapes, lambdaShapes, meanShapes] = pcaShape(aligned);
-% Plot the mean and the first mode
-plotShape(EShapes, lambdaShapes, meanShapes)
+
+% b) Plot the mean and the first mode
+nPoints = length(lambdaShapes);
+b = 3*repmat(sqrt(lambdaShapes),1,nPoints).*eye(nPoints);
+plotShape(EShapes, meanShapes, b)
+
+% c)1. Generate new shape with random b 
+% generate random b 
+b = randn(nPoints,1).*sqrt(lambdaShapes);
+
+% plot the Shapes
+plotShapeK(EShapes, meanShapes, b, [4, 20, 100, 200]);
+
+% c)2. Generate new shape with random b and percentage of total Variance
+[EShapesVar, lambdaShapesVar, meanShapesVar, k] = pcaShape(aligned ,0.8);
+
+% plot the Shapes
+plotShapeK(EShapesVar, meanShapesVar, b, k);
