@@ -82,11 +82,15 @@ nPoints = length(lambdaShapes);
 b = 3*repmat(sqrt(lambdaShapes),1,nPoints).*eye(nPoints);
 plotShape(EShapes, meanShapes, b)
 
-% c) Generate new shape with random b and percentage of total Variance
+% c)1. Generate new shape with random b 
+% generate random b 
+b = randn(nPoints,1).*sqrt(lambdaShapes);
+
+% plot the Shapes
+plotShapeK(EShapes, meanShapes, b, [4, 20, 100, 200]);
+
+% c)2. Generate new shape with random b and percentage of total Variance
 [EShapesVar, lambdaShapesVar, meanShapesVar, k] = pcaShape(aligned ,0.8);
-% generate random b with according nr of entries
-bVar = randn(nPoints,1).*sqrt(lambdaShapesVar);
-bVark = bVar;
-bVark(k+1:end)=0;
-% plot the Shape
-plotShapePVar(EShapesVar, meanShapesVar, [bVar bVark]);
+
+% plot the Shapes
+plotShapeK(EShapesVar, meanShapesVar, b, k);
