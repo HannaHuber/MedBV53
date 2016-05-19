@@ -6,7 +6,7 @@ function [ xNew ] = generateShape( E, lambda, m, b )
 %                           selected eigenvectors that are used to generate 
 %                           the new shape (k <= 2n)
 %          m        ...     2nx1 mean shape vector 
-% Output: xNew      ...     2xn generated shape, reshaped from 2nx1 shape vector: 
+%   Output: xNew    ...     2xn generated shape, reshaped from 2nx1 shape vector: 
 %                           xNew = m + sum_i=0:k (b(i)*lambda(i)*E(:,i)
       
 % Get number of used eigenvectors
