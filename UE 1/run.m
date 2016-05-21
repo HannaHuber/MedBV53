@@ -77,9 +77,9 @@ load shapes
 % a) Calculate the eigenvectors, eigenvalues and the mean
 [EShapes, lambdaShapes, meanShapes] = pcaShape(aligned);
 
-% b) Plot the mean and the first mode
+% b) Plot the mean and the first 13 modes
 nPoints = length(lambdaShapes);
-b = 3*repmat(sqrt(lambdaShapes),1,nPoints).*eye(nPoints);
+b = repmat(sqrt(lambdaShapes),1,nPoints).*eye(nPoints);
 plotShape(EShapes, meanShapes, b)
 
 % c)1. Generate new shape with random b 
@@ -87,7 +87,7 @@ plotShape(EShapes, meanShapes, b)
 b = randn(nPoints,1).*sqrt(lambdaShapes);
 
 % plot the Shapes
-plotShapeK(EShapes, meanShapes, b, [4, 20, 100, 200]);
+plotShapeK(EShapes, meanShapes, b, [1,3,6,10,20,100]);
 
 % c)2. Generate new shape with random b and percentage of total Variance
 [EShapesVar, lambdaShapesVar, meanShapesVar, k] = pcaShape(aligned ,0.8);
