@@ -1,4 +1,4 @@
-function [  ] = plotShapeK( E , mean , b, k)
+function [  ] = plotShapeK( E , mean , b, k, percentage)
 %PLOTSHAPEPVAR plots the shape of all vectors and of reduced nr of eigenvectors
 %   blau ...    reduced eigenvectors
 %   red ...     complete model with all eigenvectors
@@ -7,6 +7,8 @@ function [  ] = plotShapeK( E , mean , b, k)
 %   mean ...    meanShape of the data (1x2nPoints)
 %   b ...       vector of coefficients (entries for all eigenvectors)
 %   k ...       different numbers of eigenvectors used for the model
+%   percentage ... percentage of total variance covered by the model;
+%   necessary for better title description
 
 % Plot shape
 figure()
@@ -21,7 +23,11 @@ legs={'complete model'};
 for i=1:length(k)
     shape = generateShape(E, mean, b(1:k(i)));
     plot(shape(1,:), shape(2,:));
-    legs = {legs{:} sprintf('%d eigenvectors',k(i))};
+    if nargin == 5
+        legs = {legs{:} sprintf('%d eigenvectors: %.0f%%',k(i), percentage(i)*100)};
+    else
+        legs = {legs{:} sprintf('%d eigenvectors',k(i))};
+    end
 end
 
 xlabel('X');

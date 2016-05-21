@@ -22,7 +22,9 @@ for f=1:13
             plot(shape(1,:), shape(2,:), 'g--');
         end
     end
-
+    
+    lambda = diag(b.*b);
+    title(sprintf('%d. mode with %.2f%% of total variance',f,lambda(f)/sum(lambda)*100))
     xlabel('X');
     ylabel('Y');
 end

@@ -80,7 +80,7 @@ load shapes
 % b) Plot the mean and the first 13 modes
 nPoints = length(lambdaShapes);
 b = repmat(sqrt(lambdaShapes),1,nPoints).*eye(nPoints);
-plotShape(EShapes, meanShapes, b)
+% plotShape(EShapes, meanShapes, b)
 
 % c)1. Generate new shape with random b 
 % generate random b 
@@ -90,7 +90,10 @@ b = randn(nPoints,1).*sqrt(lambdaShapes);
 plotShapeK(EShapes, meanShapes, b, [1,3,6,10,20,100]);
 
 % c)2. Generate new shape with random b and percentage of total Variance
-[EShapesVar, lambdaShapesVar, meanShapesVar, k] = pcaShape(aligned ,0.8);
-
+percentage = [1, .95, .9, .8];
+k = zeros(size(percentage));
+for i = 1:length(percentage)
+    [EShapesVar, lambdaShapesVar, meanShapesVar, k(i)] = pcaShape(aligned ,percentage(i));
+end
 % plot the Shapes
-plotShapeK(EShapesVar, meanShapesVar, b, k);
+plotShapeK(EShapesVar, meanShapesVar, b, k, percentage);

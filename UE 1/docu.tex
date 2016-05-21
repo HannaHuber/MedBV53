@@ -1,5 +1,7 @@
 \documentclass[]{report}
 \usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=3cm, top=2.5cm, bottom=2cm} 
 
 
 % Title Page
@@ -50,6 +52,18 @@
 	\item Shape Modell
 	\begin{enumerate}
 		\item
+		\item %todo Abbildung und zugehörige Verweise.
+		Die ersten 13 Eigenwerte sind größer als 1, alle weiteren Eigenwerte gehen gegen 0 (Werte der Größenordnung $10^{-13}$ und kleiner). Daher tragen eigentlich nur die ersten 13 Modes zur Gesamtvarianz bei und werden im Folgenden genauer betrachtet.\\
+		Der erste Modus beinhaltet mehr als 50\% der Gesamtvarianz und beeinflusst hauptsächlich die Größe der Struktur.
+		Der zweite Modus beinhaltet ein weiteres viertel der Gesamtvarianz und beeinflusst am meisten die Länge (negatives b für diesen Modus) bzw. Breite (positives b für diesen Modus) der Knochenstruktur.
+		Bereits der dritte Modus deckt nur noch etwas mehr als 10\% der Gesamtvarianz ab und ist für leichte Änderungen der exakten Knochenstruktur verantwortlich.
+		Der vierte und fünfte Modus (mit zusammen knapp 6\% der Gesamtvarianz) bestimmen wie weit die Epiphysen des Knochens im Gegensatz zur Diaphyse herausstehen.
+		Alle Modi ab dem sechsten decken bis zu gut 1\% der Gesamtvarianz ab und führen zu spezifischen Ausbuchtungen.
+		\item
+		Mit Hilfe eines zufällig generierten b-Vektors wurde eine neue Knochenstruktur berechnet. Die Anzahl der Einträge in b, und damit die Anzahl der verwendeten Eigenvektoren, wurde variiert zwischen eins, drei, sechs, zehn, 20, 100 und allen. In Abbildung XXX %todo Abbildungslink
+		sieht man die Unterschiede in der erzeugten Struktur. Wird nur der erste Eigenvektor verwendet, ist die Abweichung vom gesamten Modell am größten. Werden die ersten zehn Eigenvektoren verwendet, sind nur noch geringe Abweichungen erkennbar, wenn man entsprechende Teile der Graphik vergrößert betrachtet. Da die Eigenwerte ab dem 14. gegen Null gehen, ist es nicht überraschend, dass keine Unterschiede zwischen dem Modell mit 20 bzw. 100 Eigenvektoren und dem kompletten Modell mit allen Eigenvektoren erkennbar sind.\\
+		In Abbildung XXX %todo Abbildungslink
+		ist die Anzahl der verwendeten Eigenvektoren anhand der mindestens abgedeckten Gesamtvarianz bestimmt. Da die ersten beiden Eigenvektoren eine Gesamtvarianz von  ungefähr 75\% abdecken, werden sowohl für 80\% als auch für 90\% drei Eigenvektoren verwendet. Für 95\% sind zwei weitere Eigenvektoren notwendig. Für ein vollständiges Modell werden die ersten 13 Eigenvektoren benötigt, alle weiteren tragen derart geringfügig zur Gesamtvarianz bei, dass sie vernachlässigt werden können. Der Fehler beläuft sich hierbei auf $1.4158\times 10^{-15}$.
 	\end{enumerate}
 \end{enumerate}
 
