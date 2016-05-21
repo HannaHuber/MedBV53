@@ -13,23 +13,23 @@ C2 = ourCov(data2);
 C3 = ourCov(data3);
 C4 = ourCov(data4);
 
-% % Plot results
-% figure()
-% % plot(C1,'.');
-% plot(data1(1,:),data1(2,:),'.');
-% axis equal;
-% figure()
-% % plot(C2,'.');
-% plot(data2(1,:),data2(2,:),'.');
-% axis equal;
-% figure()
-% % plot(C3,'.');
-% plot(data3(1,:),data3(2,:),'.');
-% axis equal;
-% figure()
-% % plot(C4,'.');
-% plot(data4(1,:),data4(2,:),'.');
-% axis equal;
+% Plot results
+figure()
+% plot(C1,'.');
+plot(data1(1,:),data1(2,:),'.');
+axis equal;
+figure()
+% plot(C2,'.');
+plot(data2(1,:),data2(2,:),'.');
+axis equal;
+figure()
+% plot(C3,'.');
+plot(data3(1,:),data3(2,:),'.');
+axis equal;
+figure()
+% plot(C4,'.');
+plot(data4(1,:),data4(2,:),'.');
+axis equal;
 
 %% Ex. 2 - PCA
 
@@ -80,7 +80,7 @@ load shapes
 % b) Plot the mean and the first 13 modes
 nPoints = length(lambdaShapes);
 b = repmat(sqrt(lambdaShapes),1,nPoints).*eye(nPoints);
-% plotShape(EShapes, meanShapes, b)
+plotShape(EShapes, meanShapes, b)
 
 % c)1. Generate new shape with random b 
 % generate random b 
@@ -90,8 +90,11 @@ b = randn(nPoints,1).*sqrt(lambdaShapes);
 plotShapeK(EShapes, meanShapes, b, [1,3,6,10,20,100]);
 
 % c)2. Generate new shape with random b and percentage of total Variance
+% given percentages
 percentage = [1, .95, .9, .8];
+% allocate k
 k = zeros(size(percentage));
+% calculate k for the given percentages
 for i = 1:length(percentage)
     [EShapesVar, lambdaShapesVar, meanShapesVar, k(i)] = pcaShape(aligned ,percentage(i));
 end

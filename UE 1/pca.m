@@ -1,17 +1,16 @@
 function [ E, lambda, k ] = pca( D, percentageVar )
-%PCA computes the PCA of the data matrix D dxn
+%PCA computes the PCA of the data matrix
 %   d ... dimension
 %   n ... number of data 
-%   percentageVar ... not mandatory; if given, the highest eigenvalues are given
-%       back such that at least the given percentage of the variance is captured
-%       by the model
-% OUTPUT:
-%   E ... Eigenvectors
-%   lambda ... Eigenvalues in decending order
-%   k ... nr of first k eigenvectors to capture percentageVar of the
-%   variance
-%   
-
+%   Input: D                ...     dxn data matrix
+%          percentageVar    ...     not mandatory; minimum percentage of the 
+%                                   total variance captured by the model
+%
+%   Output:E        ...     2nx2n Matrix of eigenvectors     
+%          lambda   ...     2nx1 vector of corresponding eigenvalues
+%          k        ...     nr of first k eigenvectors to capture percentageVar 
+%                           of the variance
+%  
 
 % Step 1: Compute the empirical mean & subtract it from the data and calculate empirical covariance matrix
 C_D = ourCov(D);
