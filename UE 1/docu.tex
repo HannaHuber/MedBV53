@@ -44,10 +44,15 @@
 		data3 hat eine sehr hohe und eine deutlich niedrigere Varianz sowie eine hohe Kovarianz. Dies führt zu einem leicht ansteigenden Band.
 		data4 hat hohe nahe beieinander liegende Varianzen und eine Kovarianz nahe beim Nullpunkt. Dies führt zu einer Punktwolke ohne erkennbare Ordnung.
 	\end{enumerate}
-	\item PCA
+	\item PCA\\
+	
+		
+		
+		pca.m berechnet die PCA indem mithilfe von der Matlabfunktion eig die Eigenwerte und -vektoren abgefragt werden. Diese Funktion ordnet beides nach aufsteigenden Eigenwerten, daher wird danach noch die Reihenfolge umgekehrt.
 	\begin{enumerate}
 		
-		\item
+		\item	
+		Plot der Ergebnisse für die Daten aus daten.mat mit plot2DPCA.m.
 		\item
 		Der erste Eigenvektor gibt die Richtung der höchsten Varianz an. Weitere Eigenvektoren stehen jeweils orthogonal auf alle schon vorhanden Eigenvektoren und geben die Richtung der höchsten verbleibenden Varianz an. Im Plot sind die Eigenvektoren durch blaue Striche durch den Mittelwert gekennzeichnet.
 		\item
@@ -59,11 +64,19 @@
 	\item Unterraum-Projektion
 	\begin{enumerate}
 		\item
+		In project.m werden data3 und die Eigenvektoren übernommen und die Daten mithilfe von $b=E^{T}*(x-m)$ in das Koordinatensystem des Eigenraums übertragen. Hierdurch können die Daten auf den Hauptvektor projiziert werden, indem weitere Dimensionen einfach weggeschnitten werden. Die Daten sind damit nur noch eindimensional.\\
+		Anschließend werden die Daten im Eigenraum mit Nullen auf die ursprüngliche Dimension aufgefüllt. Diese neuen Daten werden in der obigen Gleichung als $b$ eingesetzt und es wird nach $x$ gelöst. So werden die auf den Hauptvektor projizierten Daten wieder im ursprünglichen Koordinatensystem dargestellt.\\
+		Wie man im Plot sehen kann, liegen die Datenpunkte nach Projektion und Rekonstruktion alle auf einer Linie, da sie auf eine Dimension reduziert wurden. Der durchschnittliche Fehler liegt bei 0.7257.
+		\item
+		Der im Plot sichtbare Unterschied zum vorigen Punkt ist, dass die Datenpunkte nach Projektion und Rekonstruktion viel näher zusammen liegen. Der durchschnittliche Fehler ist mit 8.9097 deutlich höher. Um den Fehler gering zu halten, verwendet man die Eigenvektoren mit den höchsten Eigenwerten. Hierbei gibt es einen Trade-off zwischen Genauigkeit und Anzahl der verwendeten Eigenvektoren.
 	\end{enumerate}
 	
 	\item Untersuchungen in 3D
 	\begin{enumerate}
 		\item
+		
+		\item
+		Nach Projektion auf den Unterraum, der durch die ersten beiden Eigenvektoren aufgespannt wird, haben die Daten Dimension zwei. Die verlorene Information ist die des dritten Eigenvektors. Die Daten liegen jetzt in einer Ebene.
 		\setlength\figureheight{10cm}
 		\begin{figure}[tbp!]
 			\centering
