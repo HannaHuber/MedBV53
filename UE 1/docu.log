@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.12)  22 MAY 2016 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.12)  22 MAY 2016 11:18
 entering extended mode
 **./docu.tex
 (docu.tex
@@ -1343,62 +1343,22 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.13}).
 
 \c__siunitx_mathsf_int=\count185
 \c__siunitx_mathtt_int=\count186
-[1
+! I can't write on file `docu.pdf'.
+Please type another file name for output
+! Emergency stop.
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.30 \maketitle
+               
+*** (job aborted, file error in nonstop mode)
 
-{C:/Users/Lena/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(figures/3DplotRec.tex
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-)
-Overfull \hbox (51.03348pt too wide) in paragraph at lines 2171--71
- [][] 
- []
-
-(figures/mode1.tex)
-Overfull \hbox (24.75937pt too wide) in paragraph at lines 944--92
- [][] 
- []
-
-(figures/mode2.tex)
-Overfull \hbox (24.75937pt too wide) in paragraph at lines 944--99
- [][] 
- []
-
-(figures/mode3.tex)
-Overfull \hbox (24.75388pt too wide) in paragraph at lines 944--106
- [][] 
- []
-
-(figures/mode4.tex)
-Overfull \hbox (22.47188pt too wide) in paragraph at lines 944--113
- [][] 
- []
-
-[1] [2] [3] (docu.aux) ) 
+ 
 Here is how much of TeX's memory you used:
- 32791 strings out of 493622
- 804177 string characters out of 3141217
- 1966224 words of memory out of 3000000
- 35762 multiletter control sequences out of 15000+200000
- 11231 words of font info for 43 fonts, out of 3000000 for 9000
+ 32203 strings out of 493622
+ 787539 string characters out of 3141217
+ 917439 words of memory out of 3000000
+ 35196 multiletter control sequences out of 15000+200000
+ 10624 words of font info for 41 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 62i,19n,107p,10378b,2444s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on docu.pdf (4 pages, 194211 bytes).
-PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 62i,6n,84p,10378b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
