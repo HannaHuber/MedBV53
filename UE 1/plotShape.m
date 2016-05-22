@@ -30,5 +30,7 @@ for f=1:13
     title(sprintf('%d. mode with %.2f%% of total variance',f,lambda(f)/sum(lambda)*100))
     xlabel('X');
     ylabel('Y');
+    
+    matlab2tikz(sprintf('figures/mode%d.tex',f),'height', '\figureheight', 'width', '\figurewidth');
 end
 end

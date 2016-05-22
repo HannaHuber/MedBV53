@@ -4,9 +4,26 @@
 \geometry{a4paper,left=2cm,right=3cm, top=2.5cm, bottom=2cm} 
 
 
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{pgfplots}
+% and optionally (as of Pgfplots 1.3):
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth 
+\setlength\figureheight{5cm}
+\setlength\figurewidth{\textwidth}
+
+
 % Title Page
 \title{Gruppennummer 16}
 \author{Andreas Cremer\\Hanna Huber\\Lena Trautmann}
+
 
 
 \begin{document}
@@ -47,6 +64,13 @@
 	\item Untersuchungen in 3D
 	\begin{enumerate}
 		\item
+		\setlength\figureheight{5cm}
+		\begin{figure}[tbp!]
+			\centering
+			\input{figures/3DplotRec.tex}
+			\caption{Projection of 3D data on first to principal components and its reconstruction} 
+			\label{fig:3D projection and reconstruction}
+		\end{figure}
 	\end{enumerate}
 	
 	\item Shape Modell
@@ -59,6 +83,40 @@
 		Bereits der dritte Modus deckt nur noch etwas mehr als 10\% der Gesamtvarianz ab und ist für leichte Änderungen der exakten Knochenstruktur verantwortlich.
 		Der vierte und fünfte Modus (mit zusammen knapp 6\% der Gesamtvarianz) bestimmen wie weit die Epiphysen des Knochens im Gegensatz zur Diaphyse herausstehen.
 		Alle Modi ab dem sechsten decken bis zu gut 1\% der Gesamtvarianz ab und führen zu spezifischen Ausbuchtungen.
+		\setlength\figureheight{5cm}
+		\setlength\figurewidth{.4\textwidth}
+		\begin{figure}[tbp!]
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/mode1.tex}
+				\caption{Modus 1}
+				\label{fig:mode1}
+			\end{subfigure}
+			\qquad
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/mode2.tex}
+				\caption{Modus 2}
+				\label{fig:mode2}
+			\end{subfigure}	
+			\\
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/mode3.tex}
+				\caption{Modus 3}
+				\label{fig:mode3}
+			\end{subfigure}
+			\qquad
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/mode4.tex}
+				\caption{Modus 4}
+				\label{fig:mode4}
+			\end{subfigure}	
+			\caption{Die ersten dreizehn Modi}
+			\label{fig:modi}
+		\end{figure}
+		
 		\item
 		Mit Hilfe eines zufällig generierten b-Vektors wurde eine neue Knochenstruktur berechnet. Die Anzahl der Einträge in b, und damit die Anzahl der verwendeten Eigenvektoren, wurde variiert zwischen eins, drei, sechs, zehn, 20, 100 und allen. In Abbildung XXX %todo Abbildungslink
 		sieht man die Unterschiede in der erzeugten Struktur. Wird nur der erste Eigenvektor verwendet, ist die Abweichung vom gesamten Modell am größten. Werden die ersten zehn Eigenvektoren verwendet, sind nur noch geringe Abweichungen erkennbar, wenn man entsprechende Teile der Graphik vergrößert betrachtet. Da die Eigenwerte ab dem 14. gegen Null gehen, ist es nicht überraschend, dass keine Unterschiede zwischen dem Modell mit 20 bzw. 100 Eigenvektoren und dem kompletten Modell mit allen Eigenvektoren erkennbar sind.\\

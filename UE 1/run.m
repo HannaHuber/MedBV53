@@ -1,5 +1,5 @@
 % *** MedBV UE1 - Group 16 ***
-
+addpath TikZ
 %% Ex. 1 - Covariance
 clear all
 close all
@@ -66,7 +66,10 @@ plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 0);
 
 % Project to two main vectors
 [p, ~, err] = project(data, E3D, [1 2]);
-plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 1);
+plot3DPCA(data', mean(data, 2)', E3D, l3D, 0, 1);
+view(57.3,-20.4); %to see all reconstructed data in one plane
+matlab2tikz('figures/3DplotRec.tex','height', '\figureheight', 'width', '\figurewidth');
+
 
 %% Ex. 5 - Shape Modell
 clear all 
@@ -88,6 +91,8 @@ b = randn(nPoints,1).*sqrt(lambdaShapes);
 
 % plot the Shapes
 plotShapeK(EShapes, meanShapes, b, [1,3,6,10,20,100]);
+matlab2tikz('figures/ShapesK.tex','height', '\figureheight', 'width', '\figurewidth');
+
 
 % c)2. Generate new shape with random b and percentage of total Variance
 % given percentages
@@ -100,3 +105,4 @@ for i = 1:length(percentage)
 end
 % plot the Shapes
 plotShapeK(EShapesVar, meanShapesVar, b, k, percentage);
+matlab2tikz('figures/ShapesVar.tex','height', '\figureheight', 'width', '\figurewidth');
