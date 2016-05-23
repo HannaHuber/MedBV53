@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.17)  22 MAY 2016 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.17)  23 MAY 2016 14:25
 entering extended mode
 **docu.tex
 (docu.tex
@@ -1234,12 +1234,30 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.13}).
 \c__siunitx_mathtt_int=\count187
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (figures/C1.tex)
+(figures/C2.tex) (figures/C3.tex) (figures/C4.tex)
+Overfull \hbox (1.27048pt too wide) in paragraph at lines 79--68
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-(figures/3DplotRec.tex
+(figures/pca1a.tex) (figures/pca2a.tex) (figures/pca3a.tex) (figures/pca4a.tex)
+[1] [2] (figures/projection1a.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+) (figures/projection2a.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1247,52 +1265,56 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 )
-Overfull \hbox (50.99191pt too wide) in paragraph at lines 2171--84
- [][] 
- []
-
-[1] (figures/mode1.tex)
-Overfull \hbox (24.75937pt too wide) in paragraph at lines 944--105
+(figures/3DplotRec.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+) (figures/mode1.tex)
+Overfull \hbox (24.75937pt too wide) in paragraph at lines 944--194
  [][] 
  []
 
 (figures/mode2.tex)
-Overfull \hbox (24.75937pt too wide) in paragraph at lines 944--112
+Overfull \hbox (24.75937pt too wide) in paragraph at lines 944--201
  [][] 
  []
 
 (figures/mode3.tex)
-Overfull \hbox (24.75388pt too wide) in paragraph at lines 944--119
+Overfull \hbox (24.75388pt too wide) in paragraph at lines 944--208
  [][] 
  []
 
 (figures/mode4.tex)
-Overfull \hbox (22.47188pt too wide) in paragraph at lines 944--126
+Overfull \hbox (22.47188pt too wide) in paragraph at lines 944--215
  [][] 
  []
 
-[2] [3] (docu.aux) ) 
+[3] [4] [5] (docu.aux) ) 
 Here is how much of TeX's memory you used:
- 32825 strings out of 493698
- 803772 string characters out of 3144403
- 1968447 words of memory out of 3000000
- 35721 multiletter control sequences out of 15000+200000
- 11231 words of font info for 43 fonts, out of 3000000 for 9000
+ 32984 strings out of 493698
+ 806522 string characters out of 3144403
+ 2078028 words of memory out of 3000000
+ 35845 multiletter control sequences out of 15000+200000
+ 12542 words of font info for 48 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 62i,20n,107p,10376b,2455s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmsy7.pfb>
-Output written on docu.pdf (4 pages, 205434 bytes).
+ 62i,21n,107p,10376b,2525s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on docu.pdf (6 pages, 315848 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

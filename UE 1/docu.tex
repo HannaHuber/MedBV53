@@ -38,6 +38,40 @@
 		\item
 		ourCov.m erwartet eine $d \times n$ Matrix und gibt die dazugehörige Kovarianzmatrix zurück.
 		\item
+		\setlength\figureheight{5cm}
+		\setlength\figurewidth{.4\textwidth}
+		\begin{figure}[tbp!]
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/C1.tex}
+				\caption{$C_{1}$}
+				\label{fig:cov1}
+			\end{subfigure}
+			\qquad
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/C2.tex}
+				\caption{$C_{2}$}
+				\label{fig:cov2}
+			\end{subfigure}	
+			\\
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/C3.tex}
+				\caption{$C_{3}$}
+				\label{fig:cov3}
+			\end{subfigure}
+			\qquad
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/C4.tex}
+				\caption{$C_{4}$}
+				\label{fig:cov4}
+			\end{subfigure}	
+			\caption{Die Kovarianzmatrizen}
+			\label{fig:cov}
+		\end{figure}
+		
 		Hier werden die Kovarianzmatrizen für daten.mat berechnet. In $C_{11}$ steht die Varianz in der ersten Dimension. In $C_{22}$ steht die Varianz in der zweiten Dimension. In $C_{12}$ und $C_{21}$ steht die Kovarianz.\\
 		data1 hat eine hohe Varianz in der ersten und eine geringe Varianz in der zweiten Dimension. Die Kovarianz ist gering, die Datenpunkte bilden ein schmales Band parallel zur x-Achse.\\
 		data2 hat eine geringe Varianz in der ersten und eine hohe Varianz in der zweiten Dimension und ebenfalls eine geringe Kovarianz. Die Datenpunkte bilden ein schmales Band parallel zur y-Achse.\\
@@ -51,7 +85,41 @@
 		pca.m berechnet die PCA indem mithilfe von der Matlabfunktion eig die Eigenwerte und -vektoren abgefragt werden. Diese Funktion ordnet beides nach aufsteigenden Eigenwerten, daher wird danach noch die Reihenfolge umgekehrt.
 	\begin{enumerate}
 		
-		\item	
+		\item
+			\setlength\figureheight{5cm}
+			\setlength\figurewidth{.4\textwidth}
+			\begin{figure}[tbp!]
+				\begin{subfigure}{0.45\textwidth}
+					\centering
+					\input{figures/pca1a.tex}
+					\caption{PCA 1}
+					\label{fig:pca1}
+				\end{subfigure}
+				\qquad
+				\begin{subfigure}{0.45\textwidth}
+					\centering
+					\input{figures/pca2a.tex}
+					\caption{PCA 2}
+					\label{fig:pca2}
+				\end{subfigure}	
+				\\
+				\begin{subfigure}{0.45\textwidth}
+					\centering
+					\input{figures/pca3a.tex}
+					\caption{PCA 3}
+					\label{fig:pca3}
+				\end{subfigure}
+				\qquad
+				\begin{subfigure}{0.45\textwidth}
+					\centering
+					\input{figures/pca4a.tex}
+					\caption{PCA 4}
+					\label{fig:pca4}
+				\end{subfigure}	
+				\caption{Die PCA-Plots}
+				\label{fig:pca}
+			\end{figure}
+			
 		Plot der Ergebnisse für die Daten aus daten.mat mit plot2DPCA.m.
 		\item
 		Der erste Eigenvektor gibt die Richtung der höchsten Varianz an. Weitere Eigenvektoren stehen jeweils orthogonal auf alle schon vorhanden Eigenvektoren und geben die Richtung der höchsten verbleibenden Varianz an. Im Plot sind die Eigenvektoren durch blaue Striche durch den Mittelwert gekennzeichnet.
@@ -62,6 +130,27 @@
 		
 	\end{enumerate}
 	\item Unterraum-Projektion
+	
+		\setlength\figureheight{5cm}
+		\setlength\figurewidth{.4\textwidth}
+		\begin{figure}[tbp!]
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/projection1a.tex}
+				\caption{Hauptvektor}
+				\label{fig:projection1}
+			\end{subfigure}
+			\qquad
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\input{figures/projection2a.tex}
+				\caption{Nebenvector}
+				\label{fig:projection2}
+			\end{subfigure}	
+			\caption{Projektionen auf Haupt und Nebenvektor}
+			\label{fig:projection}
+		\end{figure}
+		
 	\begin{enumerate}
 		\item
 		In project.m werden data3 und die Eigenvektoren übernommen und die Daten mithilfe von $b=E^{T}*(x-m)$ in das Koordinatensystem des Eigenraums übertragen. Hierdurch können die Daten auf den Hauptvektor projiziert werden, indem weitere Dimensionen einfach weggeschnitten werden. Die Daten sind damit nur noch eindimensional.\\
