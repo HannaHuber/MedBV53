@@ -27,10 +27,11 @@ for f=1:13
     end
     
     lambda = diag(b.*b);
-    title(sprintf('%d. mode with %.2f%% of total variance',f,lambda(f)/sum(lambda)*100))
+    title(sprintf('%d. mode: %.2f%% of TV',f,lambda(f)/sum(lambda)*100))
     xlabel('X');
     ylabel('Y');
     
     matlab2tikz(sprintf('figures/mode%d.tex',f),'height', '\figureheight', 'width', '\figurewidth');
+    close all
 end
 end

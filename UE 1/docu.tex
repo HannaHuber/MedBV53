@@ -73,8 +73,7 @@
 	
 	\item Untersuchungen in 3D
 	\begin{enumerate}
-		\item
-		
+		\item		
 		\item
 		Nach Projektion auf den Unterraum, der durch die ersten beiden Eigenvektoren aufgespannt wird, haben die Daten Dimension zwei. Die verlorene Information ist die des dritten Eigenvektors. Die Daten liegen jetzt in einer Ebene.
 		\setlength\figureheight{10cm}
@@ -89,52 +88,123 @@
 	\item Shape Modell
 	\begin{enumerate}
 		\item
+		generateShape.m berechnet eine neue Shape anhand der mit b gewichteten Eigenvektoren und dem Mittelwert aller Shapes.
 		\item %todo Abbildung und zugehörige Verweise.
-		Die ersten 13 Eigenwerte sind größer als 1, alle weiteren Eigenwerte gehen gegen 0 (Werte der Größenordnung $10^{-13}$ und kleiner). Daher tragen eigentlich nur die ersten 13 Modes zur Gesamtvarianz bei und werden im Folgenden genauer betrachtet.\\
+		Die ersten 13 Eigenwerte sind größer als 1, alle weiteren Eigenwerte gehen gegen 0 (Werte der Größenordnung $10^{-13}$ und kleiner). Daher tragen eigentlich nur die ersten 13 Modes zur Gesamtvarianz bei und werden im Folgenden genauer betrachtet (siehe Abb.~\ref{fig:modi}).\\
 		Der erste Modus beinhaltet mehr als 50\% der Gesamtvarianz und beeinflusst hauptsächlich die Größe der Struktur.
 		Der zweite Modus beinhaltet ein weiteres viertel der Gesamtvarianz und beeinflusst am meisten die Länge (negatives b für diesen Modus) bzw. Breite (positives b für diesen Modus) der Knochenstruktur.
 		Bereits der dritte Modus deckt nur noch etwas mehr als 10\% der Gesamtvarianz ab und ist für leichte Änderungen der exakten Knochenstruktur verantwortlich.
 		Der vierte und fünfte Modus (mit zusammen knapp 6\% der Gesamtvarianz) bestimmen wie weit die Epiphysen des Knochens im Gegensatz zur Diaphyse herausstehen.
 		Alle Modi ab dem sechsten decken bis zu gut 1\% der Gesamtvarianz ab und führen zu spezifischen Ausbuchtungen.
-		\setlength\figureheight{5cm}
-		\setlength\figurewidth{.4\textwidth}
+		\setlength\figureheight{4cm}
+		\setlength\figurewidth{.25\textwidth}
 		\begin{figure}[tbp!]
-			\begin{subfigure}{0.45\textwidth}
+			\begin{subfigure}{0.3\textwidth}
 				\centering
 				\input{figures/mode1.tex}
 				\caption{Modus 1}
 				\label{fig:mode1}
 			\end{subfigure}
-			\qquad
-			\begin{subfigure}{0.45\textwidth}
+			\quad
+			\begin{subfigure}{0.3\textwidth}
 				\centering
 				\input{figures/mode2.tex}
 				\caption{Modus 2}
 				\label{fig:mode2}
 			\end{subfigure}	
-			\\
-			\begin{subfigure}{0.45\textwidth}
+			\quad
+			\begin{subfigure}{0.3\textwidth}
 				\centering
 				\input{figures/mode3.tex}
 				\caption{Modus 3}
 				\label{fig:mode3}
-			\end{subfigure}
-			\qquad
-			\begin{subfigure}{0.45\textwidth}
+			\end{subfigure}	
+			\\
+			\begin{subfigure}{0.3\textwidth}
 				\centering
 				\input{figures/mode4.tex}
 				\caption{Modus 4}
 				\label{fig:mode4}
+			\end{subfigure}
+			\quad
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\input{figures/mode5.tex}
+				\caption{Modus 5}
+				\label{fig:mode5}
 			\end{subfigure}	
+			\quad
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\input{figures/mode6.tex}
+				\caption{Modus 6}
+				\label{fig:mode6}
+			\end{subfigure}	
+			\\
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\input{figures/mode7.tex}
+				\caption{Modus 7}
+				\label{fig:mode7}
+			\end{subfigure}
+			\quad
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\input{figures/mode8.tex}
+				\caption{Modus 8}
+				\label{fig:mode8}
+			\end{subfigure}	
+			\quad
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\input{figures/mode9.tex}
+				\caption{Modus 9}
+				\label{fig:mode9}
+			\end{subfigure}	
+			\\
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\input{figures/mode10.tex}
+				\caption{Modus 10}
+				\label{fig:mode10}
+			\end{subfigure}
+			\quad
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\input{figures/mode11.tex}
+				\caption{Modus 11}
+				\label{fig:mode11}
+			\end{subfigure}	
+			\quad
+			\begin{subfigure}{0.3\textwidth}
+				\centering
+				\input{figures/mode12.tex}
+				\caption{Modus 12}
+				\label{fig:mode12}
+			\end{subfigure}	
+			\\
 			\caption{Die ersten dreizehn Modi}
 			\label{fig:modi}
 		\end{figure}
 		
 		\item
-		Mit Hilfe eines zufällig generierten b-Vektors wurde eine neue Knochenstruktur berechnet. Die Anzahl der Einträge in b, und damit die Anzahl der verwendeten Eigenvektoren, wurde variiert zwischen eins, drei, sechs, zehn, 20, 100 und allen. In Abbildung XXX %todo Abbildungslink
-		sieht man die Unterschiede in der erzeugten Struktur. Wird nur der erste Eigenvektor verwendet, ist die Abweichung vom gesamten Modell am größten. Werden die ersten zehn Eigenvektoren verwendet, sind nur noch geringe Abweichungen erkennbar, wenn man entsprechende Teile der Graphik vergrößert betrachtet. Da die Eigenwerte ab dem 14. gegen Null gehen, ist es nicht überraschend, dass keine Unterschiede zwischen dem Modell mit 20 bzw. 100 Eigenvektoren und dem kompletten Modell mit allen Eigenvektoren erkennbar sind.\\
-		In Abbildung XXX %todo Abbildungslink
-		ist die Anzahl der verwendeten Eigenvektoren anhand der mindestens abgedeckten Gesamtvarianz bestimmt. Da die ersten beiden Eigenvektoren eine Gesamtvarianz von  ungefähr 75\% abdecken, werden sowohl für 80\% als auch für 90\% drei Eigenvektoren verwendet. Für 95\% sind zwei weitere Eigenvektoren notwendig. Für ein vollständiges Modell werden die ersten 13 Eigenvektoren benötigt, alle weiteren tragen derart geringfügig zur Gesamtvarianz bei, dass sie vernachlässigt werden können. Der Fehler beläuft sich hierbei auf $1.4158\times 10^{-15}$.
+		Mit Hilfe eines zufällig generierten b-Vektors wurde eine neue Knochenstruktur berechnet. Die Anzahl der Einträge in b, und damit die Anzahl der verwendeten Eigenvektoren, wurde variiert zwischen eins, drei, sechs, zehn, 20, 100 und allen. In Abbildung ~\ref{fig:shapesK} sieht man die Unterschiede in der erzeugten Struktur. Wird nur der erste Eigenvektor verwendet, ist die Abweichung vom gesamten Modell am größten. Werden die ersten zehn Eigenvektoren verwendet, sind nur noch geringe Abweichungen erkennbar, wenn man entsprechende Teile der Graphik vergrößert betrachtet. Da die Eigenwerte ab dem 14. gegen Null gehen, ist es nicht überraschend, dass keine Unterschiede zwischen dem Modell mit 20 bzw. 100 Eigenvektoren und dem kompletten Modell mit allen Eigenvektoren erkennbar sind.\\
+		In Abbildung~\ref{fig:shapesVar} ist die Anzahl der verwendeten Eigenvektoren anhand der mindestens abgedeckten Gesamtvarianz bestimmt. Da die ersten beiden Eigenvektoren eine Gesamtvarianz von  ungefähr 75\% abdecken, werden sowohl für 80\% als auch für 90\% drei Eigenvektoren verwendet. Für 95\% sind zwei weitere Eigenvektoren notwendig. Für ein vollständiges Modell werden die ersten 13 Eigenvektoren benötigt, alle weiteren tragen derart geringfügig zur Gesamtvarianz bei, dass sie vernachlässigt werden können. Der Fehler beläuft sich hierbei auf $1.4158\times 10^{-15}$.
+		\setlength\figureheight{5cm}
+		\setlength\figurewidth{.45\textwidth}
+		\begin{figure}
+			\centering
+			\input{figures/ShapesK.tex}
+			\caption{Neue Shape bei variierter Anzahl an verwendeten Eigenvektoren}
+			\label{fig:shapesK}
+		\end{figure}
+		\qquad
+		\begin{figure}
+			\centering
+			\input{figures/ShapesVar.tex}
+			\caption{Neue Shape bei variiertem Prozentsatz an abgedeckter Gesamtvarianz}
+			\label{fig:shapesVar}
+		\end{figure}
 	\end{enumerate}
 \end{enumerate}
 
