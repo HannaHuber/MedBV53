@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.12)  24 MAY 2016 18:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.12)  24 MAY 2016 18:57
 entering extended mode
 **./docu.tex
 (docu.tex
@@ -1193,18 +1193,18 @@ File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
  (docu.aux)
 \openout1 = `docu.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1215,14 +1215,14 @@ LaTeX Font Info:    ... okay on input line 29.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(56.9055pt, 455.24411pt, 85.35826pt)
-* v-part:(T,H,B)=(71.13188pt, 717.00946pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=455.24411pt
-* \textheight=717.00946pt
+* \textheight=731.23584pt
 * \oddsidemargin=-15.36449pt
 * \evensidemargin=-15.36449pt
-* \topmargin=-38.1381pt
+* \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -1347,17 +1347,17 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.13}).
 
 {C:/Users/Lena/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (figures/C1.tex) (figures/C2.tex) (figures/C3.tex) (figures/C4.tex)
-Overfull \hbox (1.27048pt too wide) in paragraph at lines 79--68
+Overfull \hbox (1.27048pt too wide) in paragraph at lines 79--71
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
 (figures/pca1a.tex) (figures/pca2a.tex) (figures/pca3a.tex) (figures/pca4a.tex)
-[1] [2] (figures/projection1a.tex
+[1] (figures/projection1a.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1375,7 +1375,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-)
+) [2]
 (figures/3DplotRec.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1383,75 +1383,80 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-) (figures/mode1.tex)
-Overfull \hbox (25.825pt too wide) in paragraph at lines 944--195
+)
+Overfull \hbox (51.02008pt too wide) in paragraph at lines 2171--177
+ [][] 
+ []
+
+(figures/mode1.tex)
+Overfull \hbox (25.825pt too wide) in paragraph at lines 944--193
  [][] 
  []
 
 (figures/mode2.tex)
-Overfull \hbox (25.825pt too wide) in paragraph at lines 944--202
+Overfull \hbox (25.825pt too wide) in paragraph at lines 944--200
  [][] 
  []
 
 (figures/mode3.tex)
-Overfull \hbox (23.75305pt too wide) in paragraph at lines 944--209
+Overfull \hbox (23.75305pt too wide) in paragraph at lines 944--207
  [][] 
  []
 
 (figures/mode4.tex)
-Overfull \hbox (25.82408pt too wide) in paragraph at lines 944--216
+Overfull \hbox (25.82408pt too wide) in paragraph at lines 944--214
  [][] 
  []
 
 (figures/mode5.tex)
-Overfull \hbox (25.825pt too wide) in paragraph at lines 944--223
+Overfull \hbox (25.825pt too wide) in paragraph at lines 944--221
  [][] 
  []
 
 (figures/mode6.tex)
-Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--230
+Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--228
  [][] 
  []
 
 (figures/mode7.tex)
-Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--237
+Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--235
  [][] 
  []
 
 (figures/mode8.tex)
-Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--244
+Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--242
  [][] 
  []
 
 (figures/mode9.tex)
-Overfull \hbox (25.82408pt too wide) in paragraph at lines 944--251
+Overfull \hbox (25.82408pt too wide) in paragraph at lines 944--249
  [][] 
  []
 
 (figures/mode10.tex)
-Overfull \hbox (23.75pt too wide) in paragraph at lines 944--258
+Overfull \hbox (23.75pt too wide) in paragraph at lines 944--256
  [][] 
  []
 
 (figures/mode11.tex)
-Overfull \hbox (23.75pt too wide) in paragraph at lines 944--265
+Overfull \hbox (23.75pt too wide) in paragraph at lines 944--263
  [][] 
  []
 
 (figures/mode12.tex)
-Overfull \hbox (23.75pt too wide) in paragraph at lines 944--272
+Overfull \hbox (23.75pt too wide) in paragraph at lines 944--270
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--276
+Underfull \hbox (badness 10000) in paragraph at lines 190--274
 
  []
 
 
-LaTeX Warning: Float too large for page by 27.27917pt on input line 278.
+LaTeX Warning: Float too large for page by 13.0528pt on input line 276.
 
-[3] (figures/ShapesK.tex
+(figures/ShapesK.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1465,11 +1470,11 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-) [4] [5] [6] (docu.aux) ) 
+) [3] [4] [5] (docu.aux) ) 
 Here is how much of TeX's memory you used:
  33075 strings out of 493622
  809029 string characters out of 3141217
- 2114261 words of memory out of 3000000
+ 2018971 words of memory out of 3000000
  35981 multiletter control sequences out of 15000+200000
  12542 words of font info for 48 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -1486,9 +1491,9 @@ fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on docu.pdf (7 pages, 387307 bytes).
+Output written on docu.pdf (6 pages, 387339 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
