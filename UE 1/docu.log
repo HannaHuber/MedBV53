@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.12)  23 MAY 2016 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.12)  24 MAY 2016 18:21
 entering extended mode
 **./docu.tex
 (docu.tex
@@ -1346,11 +1346,29 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.13}).
 [1
 
 {C:/Users/Lena/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+(figures/C1.tex) (figures/C2.tex) (figures/C3.tex) (figures/C4.tex)
+Overfull \hbox (1.27048pt too wide) in paragraph at lines 79--68
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-(figures/3DplotRec.tex
+(figures/pca1a.tex) (figures/pca2a.tex) (figures/pca3a.tex) (figures/pca4a.tex)
+[1] [2] (figures/projection1a.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+) (figures/projection2a.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1358,79 +1376,82 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 )
-Overfull \hbox (50.99191pt too wide) in paragraph at lines 2171--83
- [][] 
- []
-
-[1] (figures/mode1.tex)
-Overfull \hbox (25.825pt too wide) in paragraph at lines 944--105
+(figures/3DplotRec.tex
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+) (figures/mode1.tex)
+Overfull \hbox (25.825pt too wide) in paragraph at lines 944--195
  [][] 
  []
 
 (figures/mode2.tex)
-Overfull \hbox (25.825pt too wide) in paragraph at lines 944--112
+Overfull \hbox (25.825pt too wide) in paragraph at lines 944--202
  [][] 
  []
 
 (figures/mode3.tex)
-Overfull \hbox (23.75305pt too wide) in paragraph at lines 944--119
+Overfull \hbox (23.75305pt too wide) in paragraph at lines 944--209
  [][] 
  []
 
 (figures/mode4.tex)
-Overfull \hbox (25.82408pt too wide) in paragraph at lines 944--126
+Overfull \hbox (25.82408pt too wide) in paragraph at lines 944--216
  [][] 
  []
 
 (figures/mode5.tex)
-Overfull \hbox (25.825pt too wide) in paragraph at lines 944--133
+Overfull \hbox (25.825pt too wide) in paragraph at lines 944--223
  [][] 
  []
 
 (figures/mode6.tex)
-Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--140
+Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--230
  [][] 
  []
 
 (figures/mode7.tex)
-Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--147
+Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--237
  [][] 
  []
 
 (figures/mode8.tex)
-Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--154
+Overfull \hbox (20.87502pt too wide) in paragraph at lines 944--244
  [][] 
  []
 
 (figures/mode9.tex)
-Overfull \hbox (25.82408pt too wide) in paragraph at lines 944--161
+Overfull \hbox (25.82408pt too wide) in paragraph at lines 944--251
  [][] 
  []
 
 (figures/mode10.tex)
-Overfull \hbox (23.75pt too wide) in paragraph at lines 944--168
+Overfull \hbox (23.75pt too wide) in paragraph at lines 944--258
  [][] 
  []
 
 (figures/mode11.tex)
-Overfull \hbox (23.75pt too wide) in paragraph at lines 944--175
+Overfull \hbox (23.75pt too wide) in paragraph at lines 944--265
  [][] 
  []
 
 (figures/mode12.tex)
-Overfull \hbox (23.75pt too wide) in paragraph at lines 944--182
+Overfull \hbox (23.75pt too wide) in paragraph at lines 944--272
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--186
+Underfull \hbox (badness 10000) in paragraph at lines 192--276
 
  []
 
 
-LaTeX Warning: Float too large for page by 27.27917pt on input line 188.
+LaTeX Warning: Float too large for page by 27.27917pt on input line 278.
 
-(figures/ShapesK.tex
+[3] (figures/ShapesK.tex
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1444,28 +1465,30 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-) [2] [3] [4] (docu.aux) ) 
+) [4] [5] [6] (docu.aux) ) 
 Here is how much of TeX's memory you used:
- 32920 strings out of 493622
- 806345 string characters out of 3141217
- 2015680 words of memory out of 3000000
- 35861 multiletter control sequences out of 15000+200000
- 11231 words of font info for 43 fonts, out of 3000000 for 9000
+ 33075 strings out of 493622
+ 809029 string characters out of 3141217
+ 2114261 words of memory out of 3000000
+ 35981 multiletter control sequences out of 15000+200000
+ 12542 words of font info for 48 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 62i,20n,107p,10378b,2452s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,21n,107p,10378b,2524s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on docu.pdf (5 pages, 277358 bytes).
+ts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on docu.pdf (7 pages, 387307 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
