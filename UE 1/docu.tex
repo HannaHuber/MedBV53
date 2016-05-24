@@ -25,7 +25,7 @@
 
 % Title Page
 \title{Gruppennummer 16}
-\author{Andreas Cremer\\Hanna Huber\\Lena Trautmann}
+\author{Andreas Cremer\\Hanna Huber\\Lena Trautmann (1526567)}
 
 
 
@@ -78,12 +78,10 @@
 			Hier werden die Kovarianzmatrizen für daten.mat berechnet. In $C_{11}$ steht die Varianz in der ersten Dimension. In $C_{22}$ steht die Varianz in der zweiten Dimension. In $C_{12}$ und $C_{21}$ steht die Kovarianz.\\
 			data1 hat eine hohe Varianz in der ersten und eine geringe Varianz in der zweiten Dimension. Die Kovarianz ist gering, die Datenpunkte bilden ein schmales Band parallel zur x-Achse.\\
 			data2 hat eine geringe Varianz in der ersten und eine hohe Varianz in der zweiten Dimension und ebenfalls eine geringe Kovarianz. Die Datenpunkte bilden ein schmales Band parallel zur y-Achse.\\
-			data3 hat eine sehr hohe und eine deutlich niedrigere Varianz sowie eine hohe Kovarianz. Dies führt zu einem leicht ansteigenden Band.
+			data3 hat eine sehr hohe und eine deutlich niedrigere Varianz sowie eine hohe Kovarianz. Dies führt zu einem leicht ansteigenden Band.\\
 			data4 hat hohe nahe beieinander liegende Varianzen und eine Kovarianz nahe beim Nullpunkt. Dies führt zu einer Punktwolke ohne erkennbare Ordnung.
 		\end{enumerate}
 		\item PCA\\
-		
-		
 		
 		pca.m berechnet die PCA indem mithilfe von der Matlabfunktion eig die Eigenwerte und -vektoren abgefragt werden. Diese Funktion ordnet beides nach aufsteigenden Eigenwerten, daher wird danach noch die Reihenfolge umgekehrt.
 		\begin{enumerate}
@@ -183,7 +181,7 @@
 		\begin{enumerate}
 			\item
 			generateShape.m berechnet eine neue Shape anhand der mit b gewichteten Eigenvektoren und dem Mittelwert aller Shapes.
-			\item %todo Abbildung und zugehörige Verweise.		
+			\item 
 			\setlength\figureheight{4cm}
 			\setlength\figurewidth{.25\textwidth}
 			\begin{figure}[tbp!]
@@ -271,7 +269,7 @@
 					\label{fig:mode12}
 				\end{subfigure}	
 				\\
-				\caption{Die ersten dreizehn Modi}
+				\caption{Die ersten zwölf Modi: negatives Vielfaches von lambda (blau), positives Vielfaches (grün) und mean shape (rot)}
 				\label{fig:modi}
 			\end{figure}
 			Die ersten 13 Eigenwerte sind größer als 1, alle weiteren Eigenwerte gehen gegen 0 (Werte der Größenordnung $10^{-13}$ und kleiner). Daher tragen eigentlich nur die ersten 13 Modes zur Gesamtvarianz bei und werden im Folgenden genauer betrachtet (siehe Abb.~\ref{fig:modi}).\\
@@ -281,9 +279,9 @@
 			Der vierte und fünfte Modus (mit zusammen knapp 6\% der Gesamtvarianz) bestimmen wie weit die Epiphysen des Knochens im Gegensatz zur Diaphyse herausstehen.
 			Alle Modi ab dem sechsten decken bis zu gut 1\% der Gesamtvarianz ab und führen zu spezifischen Ausbuchtungen.
 			\item
-			Mit Hilfe eines zufällig generierten b-Vektors wurde eine neue Knochenstruktur berechnet. Die Anzahl der Einträge in b, und damit die Anzahl der verwendeten Eigenvektoren, wurde variiert zwischen eins, drei, sechs, zehn, 20, 100 und allen. In Abbildung ~\ref{fig:shapesK} sieht man die Unterschiede in der erzeugten Struktur. Wird nur der erste Eigenvektor verwendet, ist die Abweichung vom gesamten Modell am größten. Werden die ersten zehn Eigenvektoren verwendet, sind nur noch geringe Abweichungen erkennbar, wenn man entsprechende Teile der Graphik vergrößert betrachtet. Da die Eigenwerte ab dem 14. gegen Null gehen, ist es nicht überraschend, dass keine Unterschiede zwischen dem Modell mit 20 bzw. 100 Eigenvektoren und dem kompletten Modell mit allen Eigenvektoren erkennbar sind.\\
-			In Abbildung~\ref{fig:shapesVar} ist die Anzahl der verwendeten Eigenvektoren anhand der mindestens abgedeckten Gesamtvarianz bestimmt. Da die ersten beiden Eigenvektoren eine Gesamtvarianz von  ungefähr 75\% abdecken, werden sowohl für 80\% als auch für 90\% drei Eigenvektoren verwendet. Für 95\% sind zwei weitere Eigenvektoren notwendig. Für ein vollständiges Modell werden die ersten 13 Eigenvektoren benötigt, alle weiteren tragen derart geringfügig zur Gesamtvarianz bei, dass sie vernachlässigt werden können. Der Fehler beläuft sich hierbei auf $1.4158\times 10^{-15}$.
-			\setlength\figureheight{5cm}
+			Mit Hilfe eines zufällig generierten b-Vektors wurde eine neue Knochenstruktur berechnet. Die Anzahl der Einträge in b, und damit die Anzahl der verwendeten Eigenvektoren, wurde variiert zwischen eins, drei, sechs, zehn, 20, 100 und allen. In Abbildung ~\ref{fig:shapesK} sieht man die Unterschiede in der erzeugten Struktur. Wird nur der erste Eigenvektor verwendet, ist die Abweichung vom gesamten Modell am größten (übereinstimmend mit Aufgabe 3). Werden die ersten zehn Eigenvektoren verwendet, sind nur noch geringe Abweichungen erkennbar (wenn man entsprechende Teile der Graphik vergrößert betrachtet). Da die Eigenwerte ab dem 14. gegen Null gehen, ist es nicht überraschend, dass keine Unterschiede zwischen dem Modell mit 20 bzw. 100 Eigenvektoren und dem kompletten Modell mit allen Eigenvektoren erkennbar sind.\\
+			In Abbildung~\ref{fig:shapesVar} ist die Anzahl der verwendeten Eigenvektoren anhand der mindestens abgedeckten Gesamtvarianz bestimmt. Sowohl für 80\% als auch für 90\% der Gesamtvarianz werden drei Eigenvektoren verwendet. Für 95\% sind zwei weitere Eigenvektoren notwendig. Für ein vollständiges Modell werden die ersten 13 Eigenvektoren benötigt, alle weiteren tragen derart geringfügig zur Gesamtvarianz bei, dass sie vernachlässigt werden können. Der Fehler beläuft sich hierbei auf $1.4158\times 10^{-15}$.
+			\setlength\figureheight{4cm}
 			\setlength\figurewidth{.45\textwidth}
 			\begin{figure}
 				\centering
