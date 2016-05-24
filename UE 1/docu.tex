@@ -25,7 +25,7 @@
 
 % Title Page
 \title{Gruppennummer 16}
-\author{Andreas Cremer\\Hanna Huber\\Lena Trautmann (1526567)}
+\author{Andreas Cremer\\Hanna Huber (0925230) \\Lena Trautmann (1526567)}
 
 
 
@@ -71,12 +71,12 @@
 					\caption{$C_{4}$}
 					\label{fig:cov4}
 				\end{subfigure}	
-				\caption{Die Kovarianzmatrizen}
+				\caption{Die Daten aus data1 (a), data2 (b), data3 (c) and data4 (d)}
 				\label{fig:cov}
 			\end{figure}
 			
 			Hier werden die Kovarianzmatrizen für daten.mat berechnet. In $C_{11}$ steht die Varianz in der ersten Dimension. In $C_{22}$ steht die Varianz in der zweiten Dimension. In $C_{12}$ und $C_{21}$ steht die Kovarianz.\\
-			data1 hat eine hohe Varianz in der ersten und eine geringe Varianz in der zweiten Dimension. Die Kovarianz ist gering, die Datenpunkte bilden ein schmales Band parallel zur x-Achse.\\
+			Abbildung~\ref{fig:cov} zeigt die verschiedenen 2D-Datensätze. data1 hat eine hohe Varianz in der ersten und eine geringe Varianz in der zweiten Dimension. Die Kovarianz ist gering, die Datenpunkte bilden ein schmales Band parallel zur x-Achse.\\
 			data2 hat eine geringe Varianz in der ersten und eine hohe Varianz in der zweiten Dimension und ebenfalls eine geringe Kovarianz. Die Datenpunkte bilden ein schmales Band parallel zur y-Achse.\\
 			data3 hat eine sehr hohe und eine deutlich niedrigere Varianz sowie eine hohe Kovarianz. Dies führt zu einem leicht ansteigenden Band.\\
 			data4 hat hohe nahe beieinander liegende Varianzen und eine Kovarianz nahe beim Nullpunkt. Dies führt zu einer Punktwolke ohne erkennbare Ordnung.
@@ -121,13 +121,13 @@
 				\label{fig:pca}
 			\end{figure}
 			
-			Plot der Ergebnisse für die Daten aus daten.mat mit plot2DPCA.m.
+			Abbildung~\ref{fig:pca} zeigt die Ergebnisse für die Daten aus daten.mat mit plot2DPCA.m.
 			\item
 			Der erste Eigenvektor gibt die Richtung der höchsten Varianz an. Weitere Eigenvektoren stehen jeweils orthogonal auf alle schon vorhanden Eigenvektoren und geben die Richtung der höchsten verbleibenden Varianz an. Im Plot sind die Eigenvektoren durch blaue Striche durch den Mittelwert gekennzeichnet.
 			\item
 			Die Eigenwerte zu den Eigenvektoren geben die Varianz in Richtung des jeweiligen Eigenvektors an. Im Plot sind sie durch die Länge der Eigenvektormarkierungen dargestellt. Sie ergeben aufaddiert die Gesamtvarianz.
 			\item
-			In die Berechnung von Varianz und Kovarianz fließt hier der Abstand der Datenpunkte vom Nullpunkt des verwendeten Koordinatensystems mit ein. Somit kann man keine sinnvollen Schlussfolgerungen mehr ziehen. Durch den Mittelwertsabzug wird die Kovarianzmatrix invariant gegen Translation. 
+			In die Berechnung von Varianz und Kovarianz fließt bei fehlendem Mittelwertsabzug der Abstand der Datenpunkte vom Nullpunkt des verwendeten Koordinatensystems mit ein. Somit kann man keine sinnvollen Schlussfolgerungen mehr ziehen. Durch den Mittelwertsabzug wird die Kovarianzmatrix invariant gegen Translation. 
 			
 		\end{enumerate}
 		\item Unterraum-Projektion
@@ -156,9 +156,9 @@
 			\item
 			In project.m werden data3 und die Eigenvektoren übernommen und die Daten mithilfe von $b=E^{T}*(x-m)$ in das Koordinatensystem des Eigenraums übertragen. Hierdurch können die Daten auf den Hauptvektor projiziert werden, indem weitere Dimensionen einfach weggeschnitten werden. Die Daten sind damit nur noch eindimensional.\\
 			Anschließend werden die Daten im Eigenraum mit Nullen auf die ursprüngliche Dimension aufgefüllt. Diese neuen Daten werden in der obigen Gleichung als $b$ eingesetzt und es wird nach $x$ gelöst. So werden die auf den Hauptvektor projizierten Daten wieder im ursprünglichen Koordinatensystem dargestellt.\\
-			Wie man im Plot sehen kann, liegen die Datenpunkte nach Projektion und Rekonstruktion alle auf einer Linie, da sie auf eine Dimension reduziert wurden. Der durchschnittliche Fehler liegt bei 0.7257.
+			Wie man in Abbildung~\ref{fig:projection}a sehen sehen kann, liegen die Datenpunkte nach Projektion und Rekonstruktion alle auf einer Linie, da sie auf eine Dimension reduziert wurden. Der durchschnittliche Fehler liegt bei 0.7257.
 			\item
-			Der im Plot sichtbare Unterschied zum vorigen Punkt ist, dass die Datenpunkte nach Projektion und Rekonstruktion viel näher zusammen liegen. Der durchschnittliche Fehler ist mit 8.9097 deutlich höher. Um den Fehler gering zu halten, verwendet man die Eigenvektoren mit den höchsten Eigenwerten. Hierbei gibt es einen Trade-off zwischen Genauigkeit und Anzahl der verwendeten Eigenvektoren.
+			Abbildung~\ref{fig:projection}b zeigt die Projektion auf den Nebenvektor. Der im Plot sichtbare Unterschied zum vorigen Punkt ist, dass die Datenpunkte nach Projektion und Rekonstruktion viel näher zusammen liegen. Der durchschnittliche Fehler ist mit 8.9097 deutlich höher. Um den Fehler gering zu halten, verwendet man die Eigenvektoren mit den höchsten Eigenwerten. Hierbei gibt es einen Trade-off zwischen Genauigkeit und Anzahl der verwendeten Eigenvektoren.
 		\end{enumerate}
 		
 		\item Untersuchungen in 3D
@@ -166,13 +166,13 @@
 			\item
 			
 			\item
-			Nach Projektion auf den Unterraum, der durch die ersten beiden Eigenvektoren aufgespannt wird, haben die Daten Dimension zwei. Die verlorene Information ist die des dritten Eigenvektors. Die Daten liegen jetzt in einer Ebene.
+			Nach Projektion auf den Unterraum, der durch die ersten beiden Eigenvektoren aufgespannt wird, haben die Daten Dimension zwei. Die verlorene Information ist die des dritten Eigenvektors. Die Daten liegen jetzt in einer Ebene. Die rekonstruierten Daten sind in Abbildung~\ref{fig:3D projection and reconstruction} zu sehen.
 			\setlength\figureheight{7cm}
 			\setlength\figurewidth{\textwidth}
 			\begin{figure}[tbp!]
 				\centering
 				\input{figures/3DplotRec.tex}
-				\caption{Projection of 3D data on first to principal components and its reconstruction} 
+				\caption{Rekonstruktion der auf die ersten zwei Hauptkomponenten projizierten 3D Daten} 
 				\label{fig:3D projection and reconstruction}
 			\end{figure}
 		\end{enumerate}
@@ -274,7 +274,7 @@
 			\end{figure}
 			Die ersten 13 Eigenwerte sind größer als 1, alle weiteren Eigenwerte gehen gegen 0 (Werte der Größenordnung $10^{-13}$ und kleiner). Daher tragen eigentlich nur die ersten 13 Modes zur Gesamtvarianz bei und werden im Folgenden genauer betrachtet (siehe Abb.~\ref{fig:modi}).\\
 			Der erste Modus beinhaltet mehr als 50\% der Gesamtvarianz und beeinflusst hauptsächlich die Größe der Struktur.
-			Der zweite Modus beinhaltet ein weiteres viertel der Gesamtvarianz und beeinflusst am meisten die Länge (negatives b für diesen Modus) bzw. Breite (positives b für diesen Modus) der Knochenstruktur.
+			Der zweite Modus beinhaltet ein weiteres Viertel der Gesamtvarianz und beeinflusst am meisten die Länge (negatives b für diesen Modus) bzw. Breite (positives b für diesen Modus) der Knochenstruktur.
 			Bereits der dritte Modus deckt nur noch etwas mehr als 10\% der Gesamtvarianz ab und ist für leichte Änderungen der exakten Knochenstruktur verantwortlich.
 			Der vierte und fünfte Modus (mit zusammen knapp 6\% der Gesamtvarianz) bestimmen wie weit die Epiphysen des Knochens im Gegensatz zur Diaphyse herausstehen.
 			Alle Modi ab dem sechsten decken bis zu gut 1\% der Gesamtvarianz ab und führen zu spezifischen Ausbuchtungen.

@@ -15,25 +15,25 @@ C4 = ourCov(data4);
 
 % Plot results
 figure()
-% plot(C1,'.');
 plot(data1(1,:),data1(2,:),'.');
+axis equal;
 matlab2tikz('figures/C1.tex','height', '\figureheight', 'width', '\figurewidth');
-axis equal;
+
 figure()
-% plot(C2,'.');
 plot(data2(1,:),data2(2,:),'.');
+axis equal;
 matlab2tikz('figures/C2.tex','height', '\figureheight', 'width', '\figurewidth');
-axis equal;
+
 figure()
-% plot(C3,'.');
 plot(data3(1,:),data3(2,:),'.');
+axis equal;
 matlab2tikz('figures/C3.tex','height', '\figureheight', 'width', '\figurewidth');
-axis equal;
+
 figure()
-% plot(C4,'.');
 plot(data4(1,:),data4(2,:),'.');
-matlab2tikz('figures/C4.tex','height', '\figureheight', 'width', '\figurewidth');
 axis equal;
+matlab2tikz('figures/C4.tex','height', '\figureheight', 'width', '\figurewidth');
+
 
 %% Ex. 2 - PCA
 
