@@ -34,5 +34,5 @@ end
 
 xlabel('X');
 ylabel('Y');
-legend(legs,'location','SouthEast');
+legend(legs,'location','SouthEastOutside');
 end
