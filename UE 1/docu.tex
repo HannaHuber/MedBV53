@@ -41,7 +41,7 @@
 			\item
 			ourCov.m erwartet eine $d \times n$ Matrix und gibt die dazugehörige Kovarianzmatrix zurück.
 			\item
-			\setlength\figureheight{5cm}
+			\setlength\figureheight{3.5cm}
 			\setlength\figurewidth{.4\textwidth}
 			\begin{figure}
 				\begin{subfigure}{0.45\textwidth}
@@ -87,7 +87,7 @@
 		\begin{enumerate}
 			
 			\item
-			\setlength\figureheight{5cm}
+			\setlength\figureheight{3.5cm}
 			\setlength\figurewidth{.4\textwidth}
 			\begin{figure}
 				\begin{subfigure}{0.45\textwidth}
@@ -163,7 +163,6 @@
 		
 		\item Untersuchungen in 3D
 		\begin{enumerate}
-			\item
 				\setlength\figurewidth{\textwidth}
 				\begin{figure}[tbp!]
 					\centering
@@ -171,24 +170,18 @@
 					\caption{Daten, Eigenvektoren und Standardabweichung} 
 					\label{fig:daten3d}
 				\end{figure}
-			Wie in Abbildung~\ref{fig:daten3d} zu sehen, entspricht die Ausdehnung der Ellipsoide der Länge des Eigenvektors (als der Höhe des zugehörigen Eigenwerts) in die jeweilige Richtung. Die Größe der Varianz einer Dimension entspricht der Ausdehnung der Ellipsoide in dieser Dimension. Einer großen Kovarianz zwischen zwei Dimensionen entspricht ein schmales Ellipsoid, dessen Hauptachse entlang des ersten Meridians dieser Dimensionen liegt.
+					\setlength\figureheight{6cm}
+					\setlength\figurewidth{0.9\textwidth}
+					\begin{figure}[tbp!]
+						\centering
+						\input{figures/3DplotRec.tex}
+						\caption{Rekonstruktion der auf die ersten zwei Hauptkomponenten projizierten 3D Daten} 
+						\label{fig:3D projection and reconstruction}
+					\end{figure}
+					
 			\item
-			Nach Projektion auf den Unterraum, der durch die ersten beiden Eigenvektoren aufgespannt wird, haben die Daten Dimension zwei. Die verlorene Information ist die des dritten Eigenvektors. Die Daten liegen jetzt in einer Ebene. Die rekonstruierten Daten sind in Abbildung~\ref{fig:3D projection and reconstruction} zu sehen.
-			\setlength\figureheight{7cm}
-			\setlength\figurewidth{\textwidth}
-			\begin{figure}[tbp!]
-				\centering
-				\input{figures/3DplotRec.tex}
-				\caption{Rekonstruktion der auf die ersten zwei Hauptkomponenten projizierten 3D Daten} 
-				\label{fig:3D projection and reconstruction}
-			\end{figure}
-		\end{enumerate}
+			Wie in Abbildung~\ref{fig:daten3d} zu sehen, entspricht die Ausdehnung der Ellipsoide der Länge des Eigenvektors (als der Höhe des zugehörigen Eigenwerts) in die jeweilige Richtung und somit auch der Größe der Varianz dieser Dimension. Einer großen Kovarianz zwischen zwei Dimensionen entspricht ein Ellipsoid, dessen Hauptachse entlang des ersten Meridians dieser Dimensionen liegt.
 		
-		\item Shape Modell
-		\begin{enumerate}
-			\item
-			generateShape.m berechnet eine neue Shape anhand der mit b gewichteten Eigenvektoren und dem Mittelwert aller Shapes.
-			\item 
 			\setlength\figureheight{4cm}
 			\setlength\figurewidth{.25\textwidth}
 			\begin{figure}[tbp!]
@@ -279,6 +272,16 @@
 				\caption{Die ersten zwölf Modi: negatives Vielfaches von lambda (blau), positives Vielfaches (grün) und mean shape (rot)}
 				\label{fig:modi}
 			\end{figure}
+				\item
+				Nach Projektion auf den Unterraum, der durch die ersten beiden Eigenvektoren aufgespannt wird, haben die Daten Dimension zwei. Die verlorene Information ist die des dritten Eigenvektors. Die Daten liegen jetzt in einer Ebene. Die rekonstruierten Daten sind in Abbildung~\ref{fig:3D projection and reconstruction} zu sehen.
+				
+			\end{enumerate}
+			
+			\item Shape Modell
+			\begin{enumerate}
+				\item
+				generateShape.m berechnet eine neue Shape anhand der mit b gewichteten Eigenvektoren und dem Mittelwert aller Shapes.
+				\item 
 			Die ersten 13 Eigenwerte sind größer als 1, alle weiteren Eigenwerte gehen gegen 0 (Werte der Größenordnung $10^{-13}$ und kleiner). Daher tragen eigentlich nur die ersten 13 Modes zur Gesamtvarianz bei und werden im Folgenden genauer betrachtet (siehe Abb.~\ref{fig:modi}).\\
 			Der erste Modus beinhaltet mehr als 50\% der Gesamtvarianz und beeinflusst hauptsächlich die Größe der Struktur.
 			Der zweite Modus beinhaltet ein weiteres Viertel der Gesamtvarianz und beeinflusst am meisten die Länge (negatives b für diesen Modus) bzw. Breite (positives b für diesen Modus) der Knochenstruktur.
@@ -288,7 +291,7 @@
 			\item
 			Mit Hilfe eines zufällig generierten b-Vektors wurde eine neue Knochenstruktur berechnet. Die Anzahl der Einträge in b, und damit die Anzahl der verwendeten Eigenvektoren, wurde variiert zwischen eins, drei, sechs, zehn, 20, 100 und allen. In Abbildung ~\ref{fig:shapesK} sieht man die Unterschiede in der erzeugten Struktur. Wird nur der erste Eigenvektor verwendet, ist die Abweichung vom gesamten Modell am größten (übereinstimmend mit Aufgabe 3). Werden die ersten zehn Eigenvektoren verwendet, sind nur noch geringe Abweichungen erkennbar (wenn man entsprechende Teile der Graphik vergrößert betrachtet). Da die Eigenwerte ab dem 14. gegen Null gehen, ist es nicht überraschend, dass keine Unterschiede zwischen dem Modell mit 20 bzw. 100 Eigenvektoren und dem kompletten Modell mit allen Eigenvektoren erkennbar sind.\\
 			In Abbildung~\ref{fig:shapesVar} ist die Anzahl der verwendeten Eigenvektoren anhand der mindestens abgedeckten Gesamtvarianz bestimmt. Sowohl für 80\% als auch für 90\% der Gesamtvarianz werden drei Eigenvektoren verwendet. Für 95\% sind zwei weitere Eigenvektoren notwendig. Für ein vollständiges Modell werden die ersten 13 Eigenvektoren benötigt, alle weiteren tragen derart geringfügig zur Gesamtvarianz bei, dass sie vernachlässigt werden können. Der Fehler beläuft sich hierbei auf $1.4158\times 10^{-15}$.
-			\setlength\figureheight{4cm}
+			\setlength\figureheight{3.5cm}
 			\setlength\figurewidth{.45\textwidth}
 			\begin{figure}
 				\centering
