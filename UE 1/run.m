@@ -73,6 +73,7 @@ load daten3d
 % PCA
 [E3D, l3D] = pca(data);
 plot3DPCA(data', mean(data, 2)', E3D, l3D, 1, 0);
+print('figures\pca3d','-dpng');
 
 % Project to two main vectors
 [p, ~, err] = project(data, E3D, [1 2]);

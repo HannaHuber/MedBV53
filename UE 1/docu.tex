@@ -164,7 +164,14 @@
 		\item Untersuchungen in 3D
 		\begin{enumerate}
 			\item
-			
+				\setlength\figurewidth{\textwidth}
+				\begin{figure}[tbp!]
+					\centering
+					\includegraphics[height=7cm]{figures/pca3d.png}
+					\caption{Daten, Eigenvektoren und Standardabweichung} 
+					\label{fig:daten3d}
+				\end{figure}
+			Wie in Abbildung~\ref{fig:daten3d} zu sehen, entspricht die Ausdehnung der Ellipsoide der Länge des Eigenvektors (als der Höhe des zugehörigen Eigenwerts) in die jeweilige Richtung. Die Größe der Varianz einer Dimension entspricht der Ausdehnung der Ellipsoide in dieser Dimension. Einer großen Kovarianz zwischen zwei Dimensionen entspricht ein schmales Ellipsoid, dessen Hauptachse entlang des ersten Meridians dieser Dimensionen liegt.
 			\item
 			Nach Projektion auf den Unterraum, der durch die ersten beiden Eigenvektoren aufgespannt wird, haben die Daten Dimension zwei. Die verlorene Information ist die des dritten Eigenvektors. Die Daten liegen jetzt in einer Ebene. Die rekonstruierten Daten sind in Abbildung~\ref{fig:3D projection and reconstruction} zu sehen.
 			\setlength\figureheight{7cm}

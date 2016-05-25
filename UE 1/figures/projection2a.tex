@@ -28,10 +28,9 @@ every z tick label/.append style={font=\color{black}},
 zmin=-0.199366777294997,
 zmax=1.199366777295,
 zmajorgrids,
-view={0}{90},
-legend style={legend cell align=left,align=left,draw=black}
+view={0}{90}
 ]
-\addplot [color=blue,only marks,mark=*,mark options={solid}]
+\addplot [color=blue,only marks,mark=*,mark options={solid},forget plot]
   table[row sep=crcr]{%
 5.44472978269709	-0.577289933813434\\
 5.22805993100385	-1.61349419707251\\
@@ -84,28 +83,20 @@ legend style={legend cell align=left,align=left,draw=black}
 -2.46844330524427	-0.811528812240311\\
 -10.1079630699076	-4.45695644857533\\
 };
-\addlegendentry{Daten};
-
-\addplot [color=red,only marks,mark=o,mark options={solid}]
+\addplot [color=red,only marks,mark=o,mark options={solid},forget plot]
   table[row sep=crcr]{%
 8.81203862683339	1.40935948510302\\
 };
-\addlegendentry{Mittelwert};
-
-\addplot [color=blue,solid]
+\addplot [color=blue,solid,forget plot]
   table[row sep=crcr]{%
 19.3195667747376	4.86956046177552\\
 -1.69548952107083	-2.05084149156947\\
 };
-\addlegendentry{Eigenvektoren};
-
-\addplot [color=blue,solid]
+\addplot [color=blue,solid,forget plot]
   table[row sep=crcr]{%
 8.52125195291776	2.29238598610764\\
 9.10282530074901	0.526332984098401\\
 };
-\addlegendentry{};
-
 \addplot3 [color=red,dashed]
  table[row sep=crcr] {%
 9.24838850837491	0.0843038904880056	1\\
@@ -310,9 +301,7 @@ legend style={legend cell align=left,align=left,draw=black}
 9.74344015583029	0.248052526975103	1\\
 9.24838850837491	0.0843038904880069	1\\
 };
- \addlegendentry{1x Standardabweichung};
-
-\addplot3 [color=green,dashed]
+ \addplot3 [color=green,dashed]
  table[row sep=crcr] {%
 9.52639580242302	-0.759915704624156	1\\
 8.71523179979542	-1.02585108126304	1\\
@@ -516,9 +505,7 @@ legend style={legend cell align=left,align=left,draw=black}
 10.3368548207637	-0.491839515272781	1\\
 9.52639580242302	-0.759915704624154	1\\
 };
- \addlegendentry{2x Standardabweichung};
-
-\addplot3 [color=blue,dashed]
+ \addplot3 [color=blue,dashed]
  table[row sep=crcr] {%
 9.7932409525288	-1.57023942419164	1\\
 8.67907001242219	-1.93551385406963	1\\
@@ -722,9 +709,7 @@ legend style={legend cell align=left,align=left,draw=black}
 10.906443564402	-1.2020244899215	1\\
 9.79324095252881	-1.57023942419163	1\\
 };
- \addlegendentry{3x Standardabweichung};
-
-\addplot [color=green,only marks,mark=asterisk,mark options={solid}]
+ \addplot [color=green,only marks,mark=asterisk,mark options={solid},forget plot]
   table[row sep=crcr]{%
 9.07281539627995	0.617463504565392\\
 9.35946327186369	-0.252994784285071\\
@@ -777,8 +762,6 @@ legend style={legend cell align=left,align=left,draw=black}
 8.36823088962124	2.75706221175178\\
 8.70384746284326	1.73790158674533\\
 };
-\addlegendentry{Reconstruction};
-
 \addplot [color=blue,dotted,forget plot]
   table[row sep=crcr]{%
 5.44472978269709	-0.577289933813434\\
