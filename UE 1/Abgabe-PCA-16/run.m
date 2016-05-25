@@ -64,8 +64,7 @@ plot2DPCA(data3', mean(p3Second, 2)', p3Second', E3, l3, 1, 1)
 
 %% Ex. 4 - 3D data
 
-clear all
-close all
+
 
 % Load 3D data
 load daten3d
@@ -83,8 +82,7 @@ view(57.3,-20.4); %to see all reconstructed data in one plane
 
 
 %% Ex. 5 - Shape Modell
-clear all
-close all
+
 
 load shapes
 

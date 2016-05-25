@@ -32,6 +32,6 @@ for f=1:13
     ylabel('Y');
 
     %matlab2tikz(sprintf('figures/mode%d.tex',f),'height', '\figureheight', 'width', '\figurewidth');
-    close all
+    %close all
 end
 end
