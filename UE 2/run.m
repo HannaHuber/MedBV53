@@ -23,7 +23,7 @@ xOrig = generateShape(EShapes, meanShapes, b, 0, 1, 0, 0);
 xLarge = generateShape(EShapes, meanShapes, b, 0, 2, 0, 0);
 xSmall = generateShape(EShapes, meanShapes, b, 0, 0.5, 0, 0);
 x90 = generateShape(EShapes, meanShapes, b, 90, 1, 0, 0);
-x45 = generateShape(EShapes, meanShapes, b, 250, 1, 0, 0);
+x250 = generateShape(EShapes, meanShapes, b, 250, 1, 0, 0);
 xLowRight = generateShape(EShapes, meanShapes, b, 0, 1, 50, -20);
 xLeft = generateShape(EShapes, meanShapes, b, 0, 1, -50, 0);
 xMixed = generateShape(EShapes, meanShapes, b, 45, 1.5, 70, 70);
@@ -44,7 +44,7 @@ figure()
 plot(xOrig(1,:), xOrig(2,:), 'g-');
 hold on
 plot(x90(1,:), x90(2,:), 'r.');
-plot(x45(1,:), x45(2,:), 'b--');
+plot(x250(1,:), x250(2,:), 'b--');
 %legend('original', '90°', '45°', 'Location', 'northeastoutside');
 hold off
 axis equal
