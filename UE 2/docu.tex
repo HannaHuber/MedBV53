@@ -1,0 +1,94 @@
+\documentclass[]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=3cm, top=2cm, bottom=2cm} 
+
+
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{pgfplots}
+% and optionally (as of Pgfplots 1.3):
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth 
+\setlength\figureheight{5cm}
+\setlength\figurewidth{\textwidth}
+
+
+\renewcommand\floatpagefraction{.99}
+
+
+% Title Page
+\title{Gruppennummer 16}
+\author{Andreas Cremer (0926918)\\Hanna Huber (0925230) \\Lena Trautmann (1526567)}
+
+
+
+\begin{document}
+	\maketitle
+	
+	%\begin{abstract}
+	%\end{abstract}
+	
+	\begin{enumerate}
+		\item Shape-Modell \\\\
+			Abbildung~\ref{fig:trafo} zeigt von generateShape.m generierte Shapes und vergleicht die Original-Shape mit verschiedenen Transformationen.
+			\setlength\figureheight{3.5cm}
+			\setlength\figurewidth{.4\textwidth}
+			\begin{figure}
+				\begin{subfigure}{0.45\textwidth}
+					\centering
+					\input{figures/trafoS.tex}
+					\caption{$s=2$ (rot) und $s=0.5$ (blau)}
+					\label{fig:s}
+				\end{subfigure}
+				\qquad
+				\begin{subfigure}{0.45\textwidth}
+					\centering
+					\input{figures/trafoR.tex}
+					\caption{$r=90^\circ$ (rot) und $r=250^\circ$  (blau)}
+					\label{fig:r}
+				\end{subfigure}	
+				\\
+				\begin{subfigure}{0.45\textwidth}
+					\centering
+					\input{figures/trafoT.tex}
+					\caption{$t=(50,-20)$ (rot) und $t=(-50,0)$ (blau)}
+					\label{fig:t}
+				\end{subfigure}
+				\qquad
+				\begin{subfigure}{0.45\textwidth}
+					\centering
+					\input{figures/trafoMix.tex}
+					\caption{$s=1.5$, $r=45^\circ$ und $t=(70,70)$ (rot)}
+					\label{fig:mix}
+				\end{subfigure}	
+				\caption{Vergleich zwischen transformierten Shapes mit Vergrößerungsfaktor $s$, Drehwinkel $r$ und Translationsvektor $t=(t_x,t_y)$ und Original-Shape (grün, $s=1$, $r=0$, $t=(0,0)$) : Skalierung~(\ref{fig:s}), Rotation~(\ref{fig:r}), Translation~(\ref{fig:t}) und beliebige Transformation~(\ref{fig:mix}).}
+				\label{fig:trafo}
+			\end{figure}
+			
+
+		\item Featureberechnung
+			
+		\item Klassifikation und Feature-Selection
+			\begin{enumerate}
+				\item
+				\item
+				\item 
+			\end{enumerate}
+		
+		\item Shape Particle Filter
+			\begin{enumerate}
+				\item
+				\item
+				\item
+			\end{enumerate}
+			
+	\end{enumerate}
+	
+\end{document}          
