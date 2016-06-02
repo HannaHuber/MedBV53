@@ -1,7 +1,8 @@
 # Matlab
-.asv
+*.asv
 
 # Latex
-.aux
-.log
-.synctex.gz
+*.aux
+*.log
+*.synctex.gz
+
