@@ -31,7 +31,7 @@ imageFeatures(5:24,:)=computeHaarLike(image);
 maggradMatrix=vec2mat(maggrad,dim(1))';
 imageFeatures(25:44,:)=computeHaarLike(maggradMatrix);
 
-%x- und y- coordinates of a pixel
+%x- and y- coordinates of a pixel
 dimensionVectorXshort=1:dim(1);
 dimensionVectorX=repmat(dimensionVectorXshort,1,dim(2));
 imageFeatures(45,:)=dimensionVectorX;
