@@ -1,16 +1,17 @@
 % *** MedBV UE2 - Group 16 ***
-clear all
+% clear all
 close all
 
 addpath TikZ
+addpath providedFunctions
 
 %% Init
 
 % Load data
 load handdata
 
-% Reshpe matrix to dim x nLandmarks x nShapes
-permute(aligned, [ 2 1 3]);
+% Reshape matrix to dim x nLandmarks x nShapes
+%aligned = permute(aligned, [ 2 1 3]);
 
 %% Task 1 : Transform shape model
 
@@ -76,33 +77,26 @@ axis equal
 %% Task 2: Calculate features
 close all
 
+%features11 = computeFeatures(images{1,1});
+
 %% Task 3: Classification & feature selection
 close all
 
 % Init numbers of trees
-nTrees = [10, 20, 30, 40, 70, 100];
-nForests = length(nTrees);
+nTreesPerForest = [1, 5, 10, 20, 30, 40, 70, 100];
 
-% Init random forests
-rf = cell(1, nForests);
-err = zeros(1,nForests);
+% a) Create random forests (TODO: call for >1 element of nTreesPerForest)
+[rf, err] = train(images, masks, nTreesPerForest(3));
 
-% % TODO: Discuss if comparison should be done within train() to use same set
-% % of background pixel
-% for i = 1:nForests
-%     
-%     % a) Calculate random forest
-%     rf{i} = train(images, masks, nTrees(i));
-%     
-%     % b) Calculate error
-%     err(i) = oobError(rf{i});
-% 
-% end
-% 
-% % c) Compare importance of individual features
-% figure()
-% plot(rf{i}.oobPermutedVarDeltaError);
-% %matlab2tikz('figures/featImp.tex','height', '\figureheight', 'width', '\figurewidth');
+% TODO: Plot error for different numbers of trees
+
+
+% c) Compare importance of individual features
+figure()
+plot(rf{1}.OOBPermutedVarDeltaError);
+% TODO: add feature legend
+% TODO: solve tikz problem
+%matlab2tikz('figures/featImp.tex','height', '\figureheight', 'width', '\figurewidth');
 
 
 %% Task 4: Shape particle filters
