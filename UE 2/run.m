@@ -77,7 +77,8 @@ axis equal
 %% Task 2: Calculate features
 close all
 
-%features11 = computeFeatures(images{1,1});
+features11 = computeFeatures(images{1,1});
+plotFeatures(images{1,1},features11);
 
 %% Task 3: Classification & feature selection
 close all
