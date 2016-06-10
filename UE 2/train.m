@@ -1,11 +1,14 @@
-function [ rf, err ] = train( images, masks, nTreesPerForest )
+function [ rf, err, E, lambda ] = train( images, masks, nTreesPerForest, aligned )
 %TRAIN trains random forest 
 %   Input: images           ...    1 x nImages cell of training data images   
 %          masks            ...    1 x nImages cell of corrsponding labels
 %          nTreesPerFOrest  ...    1 x nForests array containing number of trees in each random forest
+%          aligned          ...    nLandmarks x nDimensions x nShapes tensor containing the aligned images
 %   Output: rf              ...    1 x nForests cell of random forest objects (instance of Matlab's TreeBagger class)
 %           err             ...    1 x nForests array containing mean error of each
 %                                  forest
+%           E               ...    2nx2n Matrix of eigenvectors     
+%           lambda          ...    2nx1 vector of corresponding eigenvalues   
 
 %% Init 
 
@@ -81,5 +84,6 @@ end
 tFor = toc;
 disp(strcat('Forest calculation: ',num2str(tFor)));
 
-
-
+if nargin == 4
+    [E, lambda] = pcaShape(aligned);
+end
