@@ -1,4 +1,4 @@
-function [ rf, err, E, lambda ] = train( images, masks, nTreesPerForest, aligned )
+function [ rf, err, E, lambda, meanS ] = train( images, masks, nTreesPerForest, aligned )
 %TRAIN trains random forest 
 %   Input: images           ...    1 x nImages cell of training data images   
 %          masks            ...    1 x nImages cell of corrsponding labels
@@ -85,5 +85,5 @@ tFor = toc;
 disp(strcat('Forest calculation: ',num2str(tFor)));
 
 if nargin == 4
-    [E, lambda] = pcaShape(aligned);
+    [E, lambda, meanS] = pcaShape(aligned);
 end

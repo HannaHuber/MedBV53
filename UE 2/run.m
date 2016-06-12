@@ -106,5 +106,4 @@ plot(rf{1}.OOBPermutedVarDeltaError);
 [rf, err, E, lambda] = train(images(1,1:30), masks, [10], aligned);
 predMasks = predictLabel(rf, images(1,31:50));
 
-% p = [b;0;1;50;120]; %test-p
-% cost = costFunction(predMasks{1,1},EShapes,meanShapes,p);
+bestP = optimizeP;
