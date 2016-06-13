@@ -1,8 +1,10 @@
 # Matlab
 *.asv
+zzzcomputeFeatures*
 
 # Latex
 *.aux
 *.log
 *.synctex.gz
+
 
