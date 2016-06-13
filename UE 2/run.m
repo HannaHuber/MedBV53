@@ -133,4 +133,4 @@ boxplot(performance(:,1), performanceModel)
 %xlabel('99% variance within model')
 ylabel('distance from landmark to nearest mask point [pixel]')
 title('segmentation performance of the model')
-save('bestP_9EV.mat','bestP','performance','performanceModel');
+% save('bestP_9EV.mat','bestP','performance','performanceModel');
