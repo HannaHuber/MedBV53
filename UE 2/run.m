@@ -106,4 +106,31 @@ plot(rf{1}.OOBPermutedVarDeltaError);
 [rf, err, E, lambda] = train(images(1,1:30), masks, [10], aligned);
 predMasks = predictLabel(rf, images(1,31:50));
 
+% c) optimize the parameter vektor p for every testimage
+%%
+% info: 1.-5. EV = 97,46 proz. & 1.-4. EV = 96,34 proz. & 1.-9. EV = 99,02
+% proz.
 bestP = optimizeP;
+%%
+performance=zeros(64,20);
+for i=1:20
+param=bestP(:,i);
+bestShape = generateShape(EShapes, meanShapes, param(1:end-4), param(end-3), param(end-2), param(end-1), param(end));
+% figure()
+% image(predMasks{1,i})
+% hold on
+% plot(bestShape(1,:),bestShape(2,:),'r')
+
+% compute segmentation performance
+[y,x] = find(masks{1,30+i});
+[~,d] = knnsearch([x y],bestShape');
+performance(:,i)=d;
+end
+performance = performance(:);
+performanceModel = repmat({'99% variance within model'},[length(performance) 1]);
+figure()
+boxplot(performance(:,1), performanceModel)
+%xlabel('99% variance within model')
+ylabel('distance from landmark to nearest mask point [pixel]')
+title('segmentation performance of the model')
+save('bestP_9EV.mat','bestP','performance','performanceModel');

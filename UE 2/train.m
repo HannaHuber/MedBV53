@@ -45,7 +45,7 @@ for i = 1:nImages
     
     % Calculate features
     img = images{1,i};
-    allFeatures = computeFeatures(img);
+    allFeatures = cache(@computeFeatures,img);
     
     % Select subset for random forest 
     msk = masks{1,i};
