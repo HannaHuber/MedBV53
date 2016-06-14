@@ -1,29 +1,36 @@
-function [best] = optimizeP
+function [best, time] = optimizeP
 
 close all
 clear all
 load handdata
 
-[forest,~, E, lambda, meanS] = train( images(1,1:30),masks,32,aligned );
+[forest,~, E, ~, meanS] = train( images(1,1:30),masks,32,aligned );
 
 prediction = predictLabel(forest,images(1,31:50));
 
-best = zeros(13,20);
-
+% init 
+best = zeros(8,20); %HAS TO BE CHANGED WHEN MIN AND MAX ARE CHANGED!!!
+time = ones(1,20).*inf;
 for i=1:20    
-    f = makeOurCostFunction(prediction{1,i},meanS,E,lambda);
+    f = makeOurCostFunction(prediction{1,i},meanS,E);
     
-    minima = [-3; -3; -3; -3; -3; -3; -3; -3; -3; -50; 0.5;   0;   0];  % erste 9: Parameter der Eigenvektoren; rotation, scaling, x-translation, y-translation
-    maxima = [ 3;  3;  3;  3;  3;  3;  3;  3;  3;  50;   2; 300; 300];
-    
+%     minima = [-1.5; -1.5; -1.5; -1.5; -1.5; -1.5; -1.5; -1.5; -1.5; -30; 0.5; 50; 100];  % ersten 9: Parameter der Eigenvektoren; rotation, scaling, x-translation, y-translation
+%     maxima = [ 1.5;  1.5;  1.5;  1.5;  1.5;  1.5;  1.5;  1.5;  1.5;  30; 1.5;150; 200];
+%     minima = [-3; -3; -3; -3; -3; -3; -3; -3; -3; -50; 0.5;   0;   0];  % ersten 9: Parameter der Eigenvektoren; rotation, scaling, x-translation, y-translation
+%     maxima = [ 3;  3;  3;  3;  3;  3;  3;  3;  3;  50; 2; 300; 300];
+    minima = [ -3; -3; -3; -3; -50; 0.5;   0;   0];  % ersten 4: Parameter der Eigenvektoren; rotation, scaling, x-translation, y-translation
+    maxima = [  3;  3;  3;  3;  50;   2; 300; 300];
+%     minima = [-1.5; -1.5; -1.5; -1.5; -30; 0.5; 50; 100];  % ersten 4: Parameter der Eigenvektoren; rotation, scaling, x-translation, y-translation
+%     maxima = [ 1.5;  1.5;  1.5;  1.5;  30; 1.5;150; 200];
+
     tic
     best(:,i) = optimize( f, minima, maxima,[]);
-    tFor = toc;
-    disp(strcat('optimization image ',num2str(i+30),': ',num2str(tFor)));
+    time(i) = toc;
+    disp(strcat('optimization image ',num2str(i+30),': ',num2str(time(i))));
 end
 end
 
-function f = makeOurCostFunction(predMask, mu, EigenVektors,EigenValues)
+function f = makeOurCostFunction(predMask, mu, EigenVektors)
 
 f = @ourCostFunction;
 
@@ -46,5 +53,13 @@ f = @ourCostFunction;
         [y,x] = find(predMask);
         [~,d] = knnsearch([x y],shape');
         costs = sum(d);
+        
+        %Versuch einer 2. cost function -> hat aber gar nicht gut
+        %funktioniert...
+%         if (min(min(shape))<0 || max(shape(1,:))+2>size(predMask,2) || max(shape(2,:))+2>size(predMask,1))
+%             costs = 1000;
+%         else
+%             costs = 64-sum(sum(predMask(round(shape(2,:))+1,round(shape(1,:))+1)));
+%         end
     end
 end
