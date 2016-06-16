@@ -77,9 +77,26 @@
 			
 		\item Klassifikation und Feature-Selection
 			\begin{enumerate}
-				\item
-				\item
-				\item 
+				\setcounter{enumii}{1}
+				\item TODO: oobError
+				\item TODO: oobVar
+			\setlength\figureheight{3.5cm}
+			\setlength\figurewidth{\textwidth}
+				\begin{figure}
+					%\begin{subfigure}{0.7\textwidth}
+					\centering
+					\includegraphics[height=3.5cm]{figures/OOBErr.png}
+					\caption{Classification error for different numbers of trees per forest}
+					\label{fig:oobErr}
+					%\end{subfigure}
+					\qquad
+					%\begin{subfigure}{0.7\textwidth}
+					\centering
+					\includegraphics[width=\textwidth,height=4cm]{figures/OOBVarStacked.png}
+					\caption{Feature importance for different number of trees per forest}
+					\label{fig:oobVar}
+					%\end{subfigure}
+				\end{figure}
 			\end{enumerate}
 		
 		\item Shape Particle Filter
