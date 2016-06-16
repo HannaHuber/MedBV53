@@ -73,16 +73,18 @@ nForests = length(nTreesPerForest);
 rf = cell(1,nForests);
 err = zeros(1,nForests);
 
-tic
 for i = 1:nForests
+    tic
     % a) Calculate random forest
     rf{i} = TreeBagger(nTreesPerForest(i), features', maskVec', 'OOBPred', 'on', 'OOBVarImp', 'on');
     
     % b) Calculate error
     err(i) = mean(oobError(rf{i}));
+    
+    tFor = toc;
+disp(strcat('Forest calculation for ',num2str(nTreesPerForest(i)),' trees: ',num2str(tFor)));
 end
-tFor = toc;
-disp(strcat('Forest calculation: ',num2str(tFor)));
+
 
 if nargin == 4
     [E, lambda, meanS] = pcaShape(aligned);
