@@ -84,21 +84,55 @@ plotFeatures(images{1,1},features11);
 close all
 
 % Init numbers of trees
-nTreesPerForest = [1, 5, 10, 20, 30, 40, 70, 100];
+nTreesPerForest = [1, 5, 10, 20, 30, 40, 70]; %, 100];
 
 % a) Create random forests (TODO: call for >1 element of nTreesPerForest)
-[rf, err] = train(images, masks, nTreesPerForest(3));
+[rf, err] = train(images, masks, nTreesPerForest);
 
-% TODO: Plot error for different numbers of trees
-
+% b) Plot error for different numbers of trees
+figB = figure();
+plot(nTreesPerForest, err, 'rd-');
+xlabel('Number of trees per forest');
+ylabel('Out-of-bag classification error');
+matlab2tikz('figures/oobErr.tex','height', '\figureheight', 'width', '\figurewidth');
+%saveas(figB, 'figures/oobErr.png');
 
 % c) Compare importance of individual features
-figure()
-plot(rf{1}.OOBPermutedVarDeltaError);
-% TODO: add feature legend
-% TODO: solve tikz problem
-%matlab2tikz('figures/featImp.tex','height', '\figureheight', 'width', '\figurewidth');
+feat = {'grayVal', 'gradX', 'gradY', 'gradMag', ...
+        'grayHaar1', 'grayHaar2', 'grayHaar3', 'grayHaar4', 'grayHaar5', ...
+        'grayHaar6', 'grayHaar7', 'grayHaar8', 'grayHaar9', 'grayHaar10', ...
+        'grayHaar11', 'grayHaar12', 'grayHaar13', 'grayHaar14', 'grayHaar15', ...
+        'grayHaar16', 'grayHaar17', 'grayHaar18', 'grayHaar19', 'grayHaar20', ...
+        'gradHaar1', 'gradHaar2', 'gradHaar3', 'gradHaar4', 'gradHaar5', ...
+        'gradHaar6', 'gradHaar7', 'gradHaar8', 'gradHaar9', 'gradHaar10', ...
+        'gradHaar11', 'gradHaar12', 'gradHaar13', 'gradHaar14', 'gradHaar15', ...
+        'gradHaar16', 'gradHaar17', 'gradHaar18', 'gradHaar19', 'gradHaar20', ...
+        'x', 'y'};
+% Indices of selected forests
+iRFSelected = [2 4 6];
 
+% Create figure of appropriate size (for saving)
+scrsz = get(groot,'ScreenSize');
+figC = figure('Position',[1 scrsz(4)/3 scrsz(3) scrsz(4)/2]);
+
+% Plot feature importance of selected forests as stacked bar chart 
+varImp = [rf{iRFSelected(1)}.OOBPermutedVarDeltaError; ...
+          rf{iRFSelected(2)}.OOBPermutedVarDeltaError; ...
+          rf{iRFSelected(3)}.OOBPermutedVarDeltaError;];
+bar(varImp', 'stacked');
+
+% Optimze layout
+xlim([0.5 46.5])
+ax = gca;
+set(ax,'XTick', 1:46,'XTicklabel',feat, 'FontSize', 7)
+rotateXLabels( ax, 45 ) % file from file exchange
+xl = xlabel('Features');
+yl = ylabel('OOBPermutedVarDeltaError');
+set(xl, 'FontSize', 10);
+set(yl, 'FontSize', 10);
+%print(figC, 'figures/oobVar','-dpng','-r0')
+matlab2tikz('figures/featImp.tex','height', '\figureheight', 'width', '\figurewidth');
+%saveas(figC, strcat('figures/oobVarStacked.png'));
 
 %% Task 4: Shape particle filters
 % a) function train and predict
