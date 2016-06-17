@@ -110,6 +110,7 @@ feat = {'grayVal', 'gradX', 'gradY', 'gradMag', ...
         'x', 'y'};
 % Indices of selected forests
 iRFSelected = [2 4 6];
+nTSelected = nTreesPerForest(iRFSelected);
 
 % Create figure of appropriate size (for saving)
 scrsz = get(groot,'ScreenSize');
@@ -131,8 +132,11 @@ yl = ylabel('OOBPermutedVarDeltaError');
 set(xl, 'FontSize', 10);
 set(yl, 'FontSize', 10);
 %print(figC, 'figures/oobVar','-dpng','-r0')
-matlab2tikz('figures/featImp.tex','height', '\figureheight', 'width', '\figurewidth');
-%saveas(figC, strcat('figures/oobVarStacked.png'));
+%matlab2tikz('figures/featImp.tex','height', '\figureheight', 'width', '\figurewidth');
+legend(strcat(num2str(nTSelected(1)),' trees'), ...
+       strcat(num2str(nTSelected(2)),' trees'), ...
+       strcat(num2str(nTSelected(3)),' trees'),'Location', 'northwest')
+saveas(figC, strcat('figures/oobVarStacked.png'));
 
 %% Task 4: Shape particle filters
 % a) function train and predict
