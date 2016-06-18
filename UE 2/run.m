@@ -169,4 +169,4 @@ ylabel('distance from landmark to nearest mask point [pixel]')
 title('segmentation performance of the model')
 %matlab2tikz('figures/box_4EV_dist_gross.tex','height', '\figureheight', 'width', '\figurewidth');
 
-save('bestP_4EV_bool_3STD.mat','bestP','performance','performanceModel','time');
+%save('bestP_4EV_bool_3STD.mat','bestP','performance','performanceModel','time');
