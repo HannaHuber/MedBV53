@@ -78,8 +78,8 @@
 		\item Klassifikation und Feature-Selection
 			\begin{enumerate}
 				\setcounter{enumii}{1}
-				\item Abbildung~\ref{fig:oobErr} zeigt den Klassifikationsfehler für Random-Forests mit unterschiedlich vielen Bäumen. Generell erhöht sich mit einer größeren Anzahl an Bäumen auch die Genauigkeit der Klassifikation. Jedoch mit immer geriner werdendem Unterschied. Ab 40 Bäumen ist keine wesentliche Verbesserung mehr erkennbar, wenn die Anzahl der Bäume weiter erhöht wird.
-				\item Abbildung~\ref{fig:oobVar} zeigt den Einfluss der einzelnen Features auf den Klassifikationsfehler für verschiedene Random-Forests. Dieser variiert bei manchen Features - z.B. manchen Haar-Features - stark mit der Anzahl an Bäumen. Features mit insegesamt stärkstem Einfluss sind die Stärke des Gradienten (gradMag) und die Pixelkoordinaten (x,y), wobei die y-Koordinate stärkeren Einfluss hat als die x-Koordinate. Keinen Einfluss haben das 18.-20. Haar-Feature (grayHaar18-20, gradHaar18-20).
+				\item Abbildung~\ref{fig:oobErr} zeigt den Klassifikationsfehler für Random-Forests mit unterschiedlich vielen Bäumen. Generell erhöht sich mit einer größeren Anzahl an Bäumen auch die Genauigkeit der Klassifikation. Jedoch mit immer geringer werdendem Unterschied. Ab 40 Bäumen ist keine wesentliche Verbesserung mehr erkennbar, wenn die Anzahl der Bäume weiter erhöht wird.
+				\item Abbildung~\ref{fig:oobVar} zeigt den Einfluss der einzelnen Features auf den Klassifikationsfehler für verschiedene Random-Forests. Dieser variiert bei manchen Features - z.B. manchen Haar-Features - stark mit der Anzahl an Bäumen. Features mit insgesamt stärkstem Einfluss sind die Stärke des Gradienten (gradMag) und die Pixelkoordinaten (x,y), wobei die y-Koordinate stärkeren Einfluss hat als die x-Koordinate. Keinen Einfluss haben das 18.-20. Haar-Feature (grayHaar18-20, gradHaar18-20).
 			\setlength\figureheight{3.5cm}
 			\setlength\figurewidth{0.8\textwidth}
 				\begin{figure}
@@ -99,45 +99,30 @@
 					%\end{subfigure}
 				\end{figure}
 			\end{enumerate}
-		
+			
 		\item Shape Particle Filter
 			\begin{enumerate}
 				\setcounter{enumii}{3}
 				\item
-				
-				\setlength\figureheight{3.5cm}
-				\setlength\figurewidth{.4\textwidth}
+				Aufgrund der Ergebnisse von Aufgabe 3b und dem Beispielaufruf aus der Angabe, wurde die Anzahl der Bäume pro Random Forest auf 32 festgelegt. Würden wir mehr Bäume verwenden, könnte die Segmentiergenauigkeit der Methode verbessert werden, da die Vorhersage der Masks verbessert würde. Um die Rechenzeit gering zu halten, haben wir davon abgesehen, eine größere Zahl an Bäumen zu verwenden.\\
+				Bei der Optimierungsfunktion musste der Parameterbereich der Optimierung mit Minimum und Maximum beschränkt werden. Wird der Bereich ungeschickt gewählt, so kann es passieren, dass die Optimierungsfunktion nur ein lokales Minimum findet. Wird zBsp der Bereich für die Rotation von minimal $0^\circ$ bis maximal $359^\circ$ festgelegt, werden häufig Rotation von $~180^\circ$ als Optimum gefunden. %TODO FIGURE VON EINEM KOMPLETT GEDREHTEN KNOCHEN
+				Wird der Bereich von $-180^\circ$ bis $+180^\circ$ definiert, ist dies nicht mehr der Fall.\\
+				Außerdem kann bei der Rotation angenommen werden, dass die Knochen nicht um $90^\circ$ gedreht im Bild liegen. Beschränkt man die Rotation auf Werte von bis zu $50^\circ$ in beide Richtungen, werden Fehlsegmentierungen %todo ist Segmentierung der richtige Fachbegriff?!?!?
+				wie in Abbildung %todo ABBILDUNG VON BILD 8 bei entsprechender ROTATION
+				verhindert.\\
+				Zusätzlich muss auch der Bereich für die Skalierung gut angepasst sein. Wird ein zu großer Bereich zugelassen, können zu kleine Knochen, siehe Abbildung %todo BILD VON BILD 8 MIT 3STD UND 0,5 ALS SKALIERUNG 
+				, als Optimum bestimmt werden.\\
+				Beim Shape-Modell wurden zwei verschiedene Varianten getestet. Eines mit neun Eigenvektoren, das 99,02\% der Gesamtvarianz abdeckt, und eines mit vier Eigenvektoren, das 96,34\% der Gesamtvarianz abdeckt. Der Unterschied im Fehler war hierbei relativ gering und manchmal hatte sogar das gröbere Modell einen geringeren Fehler, siehe Abbildung \ref{fig:box4S4L9L}.\\ 
 				\begin{figure}
-%					\begin{subfigure}{0.45\textwidth}
-%						\centering
-%%						\input{}
-%						\caption{}
-%						\label{fig:box_9EV_dist_gross}
-%					\end{subfigure}
-%					\qquad
-%					\begin{subfigure}{0.45\textwidth}
-%						\centering
-%						\input{figures/box_4EV_dist_gross.tex}
-%						\caption{test}
-%						\label{fig:box_4EV_dist_gross}
-%					\end{subfigure}	
-%					\\
-%					\begin{subfigure}{0.45\textwidth}
-%						\centering
-%%						\input{}
-%						\caption{}
-%						\label{fig:box_9EV_bool_gross}
-%					\end{subfigure}
-%					\qquad
-%					\begin{subfigure}{0.45\textwidth}
-%						\centering
-%%						\input{}
-%						\caption{}
-%						\label{fig:box_9EV_dist_klein}
-%					\end{subfigure}	
-					\caption{}
-					\label{fig:box}
+					\centering
+					\includegraphics{figures/box_4S_4L_9L.png}
+					\caption{Box-plot der Fehler zwischen Shape-Modell und Klassifikatorergebnis. Links: Das Modell deckt 95\% der Varianz ab und für die Optimierung wurde ein kleinerer Bereich verwendet. Mitte: Das Modell deckt 95\% der Varianz ab und für die Optimierung wurde ein größerer Bereich verwendet. Rechts: Das Modell deckt 99\% der Varianz ab und für die Optimierung wurde ein größerer Bereich verwendet.}
+					\label{fig:box4S4L9L}
 				\end{figure}
+				Als Kostenfunktion haben wir die Summe der euklidischen Distanzen aller Landmarks zu ihrem nächstgelegenen Punkt auf der Maske verwendet. Da der nächstgelegene Punkt mittels knnSearch ermittelt wurde, betrug die Rechenzeiten der Optimierung pro Bild zwischen 30 und 60 Sekunden. Im Vergleich dazu wurde eine einfache Kostenfunktion verwendet, bei der für jeden Landmark überprüft wird, ob er direkt auf einem Konturpixel liegt oder nicht. Die Berechnung der Kostenfunktion war zwar deutlich schneller (ungefähr 1 sek pro Bild), jedoch war die Bedingung zu strikt und das Ergebnis daher nicht zu verwenden.\\
+				
+				Generell können wir für unser Modell mit vier Eigenvektoren und geeigneter Einschränkung des Optimierungsbereichs ganz gute Ergebnisse erzielen. Der Median der Fehlerdistanz liegt bei 0.75 bis 1 Pixel (siehe Abbildung~\ref{fig:box4S4L9L}). %todo Ausreisser nach oben
+				
 			\end{enumerate}
 			
 	\end{enumerate}

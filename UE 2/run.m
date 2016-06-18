@@ -139,11 +139,6 @@ legend(strcat(num2str(nTSelected(1)),' trees'), ...
 saveas(figC, strcat('figures/oobVarStacked.png'));
 
 %% Task 4: Shape particle filters
-% a) function train and predict
-% TODO: train -> laut E-mail mit landmarks und nicht mit aligned!?!?
-[rf, err, E, lambda] = train(images(1,1:30), masks, [10], aligned);
-predMasks = predictLabel(rf, images(1,31:50));
-
 % c) optimize the parameter vektor p for every testimage
 %%
 % info: 1.-5. EV = 97,46 proz. & 1.-4. EV = 96,34 proz. & 1.-9. EV = 99,02
@@ -165,12 +160,13 @@ plot(bestShape(1,:),bestShape(2,:),'r')
 performance(:,i)=d;
 end
 performance = performance(:);
-% performanceModel = repmat({'99% variance within model'},[length(performance) 1]);
+performanceModel = repmat({'k = 4; 3STD region; bool'},[length(performance) 1]);
+%%
 figure()
-boxplot(performance(:,1), performanceModel)
-%xlabel('99% variance within model')
+boxplot(performance(:,1),performanceModel);
+%boxplot([performance4S(:,1);performance4L(:,1);performance9L(:,1)], [performanceModel4S;performanceModel4L;performanceModel9L])
 ylabel('distance from landmark to nearest mask point [pixel]')
 title('segmentation performance of the model')
 %matlab2tikz('figures/box_4EV_dist_gross.tex','height', '\figureheight', 'width', '\figurewidth');
 
-save('bestP_4EV_bool_gross.mat','bestP','performance','performanceModel','time');
+save('bestP_4EV_bool_3STD.mat','bestP','performance','performanceModel','time');

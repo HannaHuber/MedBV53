@@ -85,7 +85,7 @@ for i = 1:nForests
 disp(strcat('Forest calculation for ',num2str(nTreesPerForest(i)),' trees: ',num2str(tFor)));
 end
 
-
+% if the aligned data set is given, calculate the shape model
 if nargin == 4
     [E, lambda, meanS] = pcaShape(aligned);
 end
