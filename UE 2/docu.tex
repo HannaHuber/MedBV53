@@ -105,23 +105,55 @@
 				\setcounter{enumii}{3}
 				\item
 				Aufgrund der Ergebnisse von Aufgabe 3b und dem Beispielaufruf aus der Angabe, wurde die Anzahl der Bäume pro Random Forest auf 32 festgelegt. Würden wir mehr Bäume verwenden, könnte die Segmentiergenauigkeit der Methode verbessert werden, da die Vorhersage der Masks verbessert würde. Um die Rechenzeit gering zu halten, haben wir davon abgesehen, eine größere Zahl an Bäumen zu verwenden.\\
-				Bei der Optimierungsfunktion musste der Parameterbereich der Optimierung mit Minimum und Maximum beschränkt werden. Wird der Bereich ungeschickt gewählt, so kann es passieren, dass die Optimierungsfunktion nur ein lokales Minimum findet. Wird zBsp der Bereich für die Rotation von minimal $0^\circ$ bis maximal $359^\circ$ festgelegt, werden häufig Rotation von $~180^\circ$ als Optimum gefunden. %TODO FIGURE VON EINEM KOMPLETT GEDREHTEN KNOCHEN
+				Bei der Optimierungsfunktion musste der Parameterbereich der Optimierung mit Minimum und Maximum beschränkt werden. Wird der Bereich ungeschickt gewählt, so kann es passieren, dass die Optimierungsfunktion nur ein lokales Minimum findet. Wird zBsp der Bereich für die Rotation von minimal $0^\circ$ bis maximal $359^\circ$ festgelegt, werden häufig Rotation von $~180^\circ$ als Optimum gefunden (siehe Abbildung~\ref{fig:image31_wrongRotationRange180}).
 				Wird der Bereich von $-180^\circ$ bis $+180^\circ$ definiert, ist dies nicht mehr der Fall.\\
 				Außerdem kann bei der Rotation angenommen werden, dass die Knochen nicht um $90^\circ$ gedreht im Bild liegen. Beschränkt man die Rotation auf Werte von bis zu $50^\circ$ in beide Richtungen, werden Fehlsegmentierungen %todo ist Segmentierung der richtige Fachbegriff?!?!?
-				wie in Abbildung %todo ABBILDUNG VON BILD 8 bei entsprechender ROTATION
-				verhindert.\\
-				Zusätzlich muss auch der Bereich für die Skalierung gut angepasst sein. Wird ein zu großer Bereich zugelassen, können zu kleine Knochen, siehe Abbildung %todo BILD VON BILD 8 MIT 3STD UND 0,5 ALS SKALIERUNG 
-				, als Optimum bestimmt werden.\\
-				Beim Shape-Modell wurden zwei verschiedene Varianten getestet. Eines mit neun Eigenvektoren, das 99,02\% der Gesamtvarianz abdeckt, und eines mit vier Eigenvektoren, das 96,34\% der Gesamtvarianz abdeckt. Der Unterschied im Fehler war hierbei relativ gering und manchmal hatte sogar das gröbere Modell einen geringeren Fehler, siehe Abbildung \ref{fig:box4S4L9L}.\\ 
+				wie in Abbildung~\ref{fig:image31_wrongRotationRange90}	verhindert.\\
+				Zusätzlich muss auch der Bereich für die Skalierung gut angepasst sein. Wird ein zu großer Bereich zugelassen, können zu kleine Knochen, siehe Abbildung~\ref{fig:image31_wrongScalingRange}, als Optimum bestimmt werden.\\
 				\begin{figure}
-					\centering
-					\includegraphics{figures/box_4S_4L_9L.png}
-					\caption{Box-plot der Fehler zwischen Shape-Modell und Klassifikatorergebnis. Links: Das Modell deckt 95\% der Varianz ab und für die Optimierung wurde ein kleinerer Bereich verwendet. Mitte: Das Modell deckt 95\% der Varianz ab und für die Optimierung wurde ein größerer Bereich verwendet. Rechts: Das Modell deckt 99\% der Varianz ab und für die Optimierung wurde ein größerer Bereich verwendet.}
+					\begin{subfigure}[t]{0.3\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{figures/image31_wrongRotationRange180.png}
+						\caption{Als Optimum gefundenes Shape Modell für eine falsche Rotationsbegrenzung von $0^\circ$ bis $359^\circ$.}
+						\label{fig:image31_wrongRotationRange180}
+					\end{subfigure}
+					\qquad
+					\begin{subfigure}[t]{0.3\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{figures/image38_wrongRotationRange90.png}
+						\caption{Als Optimum gefundenes Shape Modell für eine falsche Rotationsbegrenzung von $0^\circ$ bis $359^\circ$ und einen zu großen Skalierungsbereich von 0,5 bis 2.}
+						\label{fig:image31_wrongRotationRange90}
+					\end{subfigure}
+					\qquad
+					\begin{subfigure}[t]{0.3\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{figures/image38_wrongScalingRange.png}
+						\caption{Als optimal gefundenes Shape Modell für einen zu großen Skalierungsbereich von 0,5 bis 2.}
+						\label{fig:image31_wrongScalingRange}
+					\end{subfigure}
+				\caption{Fehler im Optimum des Shape Modells, die bei einem schlecht gewählten Optimierungsbereich auftreten können.}	
+				\end{figure}
+				Beim Shape-Modell wurden zwei verschiedene Varianten getestet. Eines mit neun Eigenvektoren, das 99,02\% der Gesamtvarianz abdeckt, und eines mit vier Eigenvektoren, das 96,34\% der Gesamtvarianz abdeckt. Der Unterschied im Fehler war hierbei relativ gering und manchmal hatte sogar das gröbere Modell einen geringeren Fehler, siehe Abbildung~\ref{fig:box4S4L9L}.\\ 
+				\begin{figure}
+					\begin{subfigure}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{figures/box_4STD_4S_4L_9L.png}
+						\caption{overview}
+					\end{subfigure}
+					\quad
+					\begin{subfigure}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{figures/box_4STD_4S_4L_9L_zoomed.png}
+						\caption{zoomed view}
+					\end{subfigure}
+					\caption{Box-plot der Fehler zwischen Shape-Modell und Klassifikatorergebnis. Links: Das Modell deckt 95\% der Varianz ab und für die Optimierung wurde für das Shape-Modell ein Bereich von $\pm3$ Standardvarianzen verwendet. Mitte links: Das Modell deckt 95\% der Varianz ab und für die Optimierung wurde ein kleinerer Bereich verwendet. Mitte rechts: Das Modell deckt 95\% der Varianz ab und für die Optimierung wurde ein größerer Bereich verwendet. Rechts: Das Modell deckt 99\% der Varianz ab und für die Optimierung wurde ein größerer Bereich verwendet.}
 					\label{fig:box4S4L9L}
 				\end{figure}
-				Als Kostenfunktion haben wir die Summe der euklidischen Distanzen aller Landmarks zu ihrem nächstgelegenen Punkt auf der Maske verwendet. Da der nächstgelegene Punkt mittels knnSearch ermittelt wurde, betrug die Rechenzeiten der Optimierung pro Bild zwischen 30 und 60 Sekunden. Im Vergleich dazu wurde eine einfache Kostenfunktion verwendet, bei der für jeden Landmark überprüft wird, ob er direkt auf einem Konturpixel liegt oder nicht. Die Berechnung der Kostenfunktion war zwar deutlich schneller (ungefähr 1 sek pro Bild), jedoch war die Bedingung zu strikt und das Ergebnis daher nicht zu verwenden.\\
+				Als Kostenfunktion haben wir die Summe der euklidischen Distanzen aller Landmarks zu ihrem nächstgelegenen Punkt auf der Maske verwendet. Da der nächstgelegene Punkt mittels knnSearch ermittelt wurde, betrug die Rechenzeiten der Optimierung pro Bild zwischen 30 und 75 Sekunden. Im Vergleich dazu wurde eine einfache Kostenfunktion verwendet, bei der für jeden Landmark überprüft wird, ob er direkt auf einem Konturpixel liegt oder nicht. Die Berechnung der Kostenfunktion war zwar deutlich schneller (ungefähr 1 sek pro Bild), jedoch war die Bedingung zu strikt und das Ergebnis daher nicht zu verwenden.\\
 				
-				Generell können wir für unser Modell mit vier Eigenvektoren und geeigneter Einschränkung des Optimierungsbereichs ganz gute Ergebnisse erzielen. Der Median der Fehlerdistanz liegt bei 0.75 bis 1 Pixel (siehe Abbildung~\ref{fig:box4S4L9L}). %todo Ausreisser nach oben
+				Generell können wir für unser Modell mit vier Eigenvektoren und geeigneter Einschränkung des Optimierungsbereichs ganz gute Ergebnisse erzielen. Der Median der Fehlerdistanz liegt zwischen 0.75 bis 1.2 Pixel (siehe Abbildung~\ref{fig:box4S4L9L}). Die besten Ergebnisse wurden für einen Optimierungsbereich zwischen $\pm3$ Standardvarianzen für die Shape-Parameter, eine Rotation von $\pm50^\circ$ und eine Skalierung zwischen 0.7 und 1.2 erreicht (linker Boxplot). Für festgesetzte Werte der Shape-Modell-Parameter zwischen $\pm3$ erhöhte sich der Median der Fehlerdistanz auf ~1 Pixel (die beiden rechten Boxplots). Wurden die Parameter weiter halbiert, stieg der Fehler nochmal an (mittlerer linker Boxplot). Ebenso wurden auch die Ausreißer deutlich größer.\\
+				Somit wurde zwar für den willkürlich auf 3 festgelegten Parameterbereich der Fehler im Median erhöht, die Rechenzeit war dagegen geringer (im Schnitt 37s anstatt 55s). Sowohl die weitere Halbierung des Optimierungsbereichs, als auch die Änderung der Anzahl an Eigenvektoren brachte keinen Zeitgewinn.\\
+				%todo warum werden die Ergebnisse nicht besser, wenn mein Modell eine größere Varianz abdeckt? Dann müsste ich es ja eigentlich noch besser an meine Klassifikation anpassen können?!?!?
 				
 			\end{enumerate}
 			

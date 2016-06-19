@@ -11,7 +11,7 @@ prediction = predictLabel(forest,images(1,31:50));
 % init of optimization
 best = zeros(8,20); %HAS TO BE CHANGED WHEN MIN AND MAX ARE CHANGED!!!
 time = ones(1,20).*inf;
-for i=1:20  
+for i=1:20 
     % get the Costfunction-handle
     f = makeOurCostFunction(prediction{1,i},meanS,E);
     
@@ -32,7 +32,7 @@ for i=1:20
 %     maxima = [  3;  3;  3;  3;  50;   2; 300; 300];
     % Large optimization range based on std: 4 eigenvectors of shape, rotation, scaling, x-translation, y-translation
     minima = [ -3.*sqrt(lambda(1:4)); -50; 0.7;   0;   0];  
-    maxima = [  3.*sqrt(lambda(1:4));  50;   1.2; 300; 300];
+    maxima = [  3.*sqrt(lambda(1:4));  50; 1.2; 300; 300];
 
     % optimize and measure the necessary time
     tic

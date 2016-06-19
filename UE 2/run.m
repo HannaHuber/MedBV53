@@ -144,7 +144,7 @@ saveas(figC, strcat('figures/oobVarStacked.png'));
 % info: 1.-5. EV = 97,46 proz. & 1.-4. EV = 96,34 proz. & 1.-9. EV = 99,02
 % proz.
 [bestP,time] = optimizeP;
-%%
+%
 performance=zeros(64,20);
 for i=1:20
 param=bestP(:,i);
@@ -160,13 +160,12 @@ plot(bestShape(1,:),bestShape(2,:),'r')
 performance(:,i)=d;
 end
 performance = performance(:);
-performanceModel = repmat({'k = 4; 3STD region; bool'},[length(performance) 1]);
-%%
+performanceModel = repmat({'k = 4; 3STD region; dist'},[length(performance) 1]);
+%save('bestP_4EV_dist_3STD.mat','bestP','performance','performanceModel','time');
+
+% plot according boxplot
 figure()
 boxplot(performance(:,1),performanceModel);
-%boxplot([performance4S(:,1);performance4L(:,1);performance9L(:,1)], [performanceModel4S;performanceModel4L;performanceModel9L])
+% boxplot([performance(:,1);performance4S(:,1);performance4L(:,1);performance9L(:,1)], [performanceModel;performanceModel4S;performanceModel4L;performanceModel9L])
 ylabel('distance from landmark to nearest mask point [pixel]')
 title('segmentation performance of the model')
-%matlab2tikz('figures/box_4EV_dist_gross.tex','height', '\figureheight', 'width', '\figurewidth');
-
-%save('bestP_4EV_bool_3STD.mat','bestP','performance','performanceModel','time');
