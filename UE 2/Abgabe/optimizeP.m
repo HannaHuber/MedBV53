@@ -1,4 +1,4 @@
-function [best, time] = optimizeP
+function [best, time, prediction] = optimizeP
 % close all
 % clear all
 load handdata
