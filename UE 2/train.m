@@ -82,7 +82,7 @@ for i = 1:nForests
     err(i) = mean(oobError(rf{i}));
     
     tFor = toc;
-disp(strcat('Forest calculation for ',num2str(nTreesPerForest(i)),' trees: ',num2str(tFor)));
+    disp(strcat('Forest calculation for ',num2str(nTreesPerForest(i)),' trees: ',num2str(tFor)));
 end
 
 % if the aligned data set is given, calculate the shape model
