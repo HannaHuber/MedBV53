@@ -107,6 +107,7 @@
 								\caption{Stärke des Gradienten}
 								\label{fig:m}
 							\end{subfigure}	
+							\\
 								\begin{subfigure}{0.45\textwidth}
 									\centering
 									\input{figures/haarGrey.tex}
@@ -202,7 +203,7 @@
 					\end{subfigure}
 				\caption{Fehler im Optimum des Shape Modells, die bei einem schlecht gewählten Optimierungsbereich auftreten können.}	
 				\end{figure}
-				Beim Shape-Modell wurden zwei verschiedene Varianten getestet. Eines mit neun Eigenvektoren, das 99,02\% der Gesamtvarianz abdeckt, und eines mit vier Eigenvektoren, das 96,34\% der Gesamtvarianz abdeckt. Der Unterschied im Fehler war hierbei zwar relativ gering, aber das gröbere Modell hatte einen geringeren Fehler, siehe Abbildung~\ref{fig:box4S4L9L}. Dies kann daher kommen, dass für das genauere Modell die Shape exakter an die fehlerbehaftete Klassifizierung angepasst wird und daher einen größerer Fehler zur originalen Mask entsteht.\\ 
+				Beim Shape-Modell wurden zwei verschiedene Varianten getestet. Eines mit neun Eigenvektoren, das 99,02\% der Gesamtvarianz abdeckt, und eines mit vier Eigenvektoren, das 96,34\% der Gesamtvarianz abdeckt. Der Unterschied im Fehler war hierbei zwar relativ gering, aber das gröbere Modell hatte einen geringeren Fehler, siehe Abbildung~\ref{fig:box4S4L9L}~(3)\&(4). Dies kann daher kommen, dass für das genauere Modell die Shape exakter an die fehlerbehaftete Klassifizierung angepasst wird und daher einen größerer Fehler zur originalen Mask entsteht.\\ 
 				\begin{figure}
 					\begin{subfigure}[t]{0.48\textwidth}
 						\centering
@@ -220,10 +221,39 @@
 				\end{figure}
 				Als Kostenfunktion haben wir die Summe der euklidischen Distanzen aller Landmarks zu ihrem nächstgelegenen Punkt auf der Maske verwendet. Da der nächstgelegene Punkt mittels knnSearch ermittelt wurde, betrug die Rechenzeiten der Optimierung pro Bild zwischen 30 und 75 Sekunden. Im Vergleich dazu wurde sowohl die quadrierte Summe der Abweichungen verwendet, als auch eine einfache Kostenfunktion, bei der für jeden Landmark überprüft wird, ob er direkt auf einem Konturpixel liegt oder nicht. Die Berechnung der Kostenfunktion war zwar deutlich schneller (ungefähr 1 sek pro Bild), jedoch war die Bedingung zu strikt und das Ergebnis daher nicht zu verwenden.\\
 				
-				Generell können wir für unser Modell mit vier Eigenvektoren und geeigneter Einschränkung des Optimierungsbereichs ganz gute Ergebnisse erzielen. Der Median der Fehlerdistanz liegt zwischen 0.75 bis 1.2 Pixel (siehe Abbildung~\ref{fig:box4S4L9L}). Die besten Ergebnisse wurden für einen Optimierungsbereich zwischen $\pm3$ Standardvarianzen für die Shape-Parameter, eine Rotation von $\pm50^\circ$ und eine Skalierung zwischen 0.7 und 1.2 erreicht (Abbildung~\ref{fig:box4S4L9L}~(3)). Für festgesetzte Werte der Shape-Modell-Parameter zwischen $\pm3$ erhöhte sich der Median der Fehlerdistanz auf ~1 Pixel (Abbildung~\ref{fig:box4S4L9L}~(2)). Wurden die Parameter weiter halbiert, stieg der Fehler, wie erwartet nochmal an (Abbildung~\ref{fig:box4S4L9L}~(1)). Ebenso wurden auch die Ausreißer deutlich größer.\\
+				Generell können wir für unser Modell mit vier Eigenvektoren und geeigneter Einschränkung des Optimierungsbereichs ganz gute Ergebnisse erzielen (Beispiele siehe Abbildung~). 
+				\begin{figure}
+					\begin{subfigure}[t]{0.3\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{figures/image34_4EV_dist_3STD.png}
+						\caption{Bild 34}
+						\label{fig:image34_4EV_dist_3STD}
+					\end{subfigure}
+					\qquad
+					\begin{subfigure}[t]{0.3\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{figures/image38_4EV_dist_3STD.png}
+						\caption{Bild 38}
+						\label{fig:image38_4EV_dist_3STD}
+					\end{subfigure}
+					\qquad
+					\begin{subfigure}[t]{0.3\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{figures/image48_4EV_dist_3STD.png}
+						\caption{Bild 48}
+						\label{fig:image48_4EV_dist_3STD}
+					\end{subfigure}
+					\caption{Optimierungen bei vier Eigenvektoren für das Shape-Modell, der Summe der Abweichungen als Kostenfunktion und einem Optimierungsbereich von $\pm3$ Standardabweichungen für die Shape-Modell-Parameter (Werte von r,s, tx und ty sind im Text gegeben).}
+					\label{fig:4EV_dist_3STD}	
+				\end{figure}
+				Der Median der Fehlerdistanz liegt zwischen 0.75 bis 1.2 Pixel (siehe Abbildung~\ref{fig:box4S4L9L}). Die besten Ergebnisse wurden für einen Optimierungsbereich zwischen $\pm3$ Standardvarianzen für die Shape-Parameter, eine Rotation von $\pm50^\circ$ und eine Skalierung zwischen 0.7 und 1.2 erreicht (Abbildung~\ref{fig:box4S4L9L}~(3)). Für festgesetzte Werte der Shape-Modell-Parameter zwischen $\pm3$ erhöhte sich der Median der Fehlerdistanz auf ~1 Pixel (Abbildung~\ref{fig:box4S4L9L}~(2)). Wurden die Parameter weiter halbiert, stieg der Fehler, wie erwartet nochmal an (Abbildung~\ref{fig:box4S4L9L}~(1)). Ebenso wurden auch die Ausreißer deutlich größer.\\
 				Somit wurde zwar für den willkürlich auf 3 festgelegten Parameterbereich der Fehler im Median erhöht, die Rechenzeit war dagegen geringer (im Schnitt 37s anstatt 55s). Sowohl die weitere Halbierung des Optimierungsbereichs, als auch die Änderung der Anzahl an Eigenvektoren brachte keinen Zeitgewinn.\\
-				Zuletzt wurde noch der Einfluss der Kostenfunktion mit quadrierter Summer der Abweichungen untersucht. Dabei stieg der Fehler erneut und es kamen deutlich größere Ausreißer dazu, da bei manchen Bildern, z.Bsp. Bild 48, die Klassifikation sehr schlecht war (Abbildung~%todo bild).
-				
+				Zuletzt wurde noch der Einfluss der Kostenfunktion mit quadrierter Summer der Abweichungen untersucht (Abbildung~\ref{fig:box4S4L9L}~(5)). Dabei stieg der Fehler erneut und es kamen deutlich größere Ausreißer dazu, da bei manchen Bildern, z.Bsp. Bild 48, die Klassifikation sehr schlecht war (Abbildung~\ref{fig:image48_4EV_dist2}).
+				\begin{figure}
+					\centering
+					\includegraphics[width=0.3\textwidth]{figures/image48_4EV_dist2.png}
+					\caption{Fehler im Optimum des Shape Modells (Bild 48), der bei quadrierten Distanzen als Kostenfunktion und schlechter Klassifizierung auftrat (vgl mit Abbildung~\ref{fig:image48_4EV_dist_3STD}).}					\label{fig:image48_4EV_dist2}									
+				\end{figure}
 			\end{enumerate}
 			
 	\end{enumerate}
