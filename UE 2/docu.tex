@@ -37,7 +37,7 @@
 	
 	\begin{enumerate}
 		\item Shape-Modell \\\\
-			Abbildung~\ref{fig:trafo} zeigt von generateShape.m generierte Shapes und vergleicht die Original-Shape mit verschiedenen Transformationen.
+			Abbildung~\ref{fig:trafo} zeigt von generateShape.m generierte Shapes und vergleicht jeweils die Original-Shape mit verschiedenen Transformationen.
 			\setlength\figureheight{3.5cm}
 			\setlength\figurewidth{.4\textwidth}
 			\begin{figure}
@@ -68,7 +68,7 @@
 					\caption{$s=1.5$, $r=45^\circ$ und $t=(70,70)$ (rot)}
 					\label{fig:mix}
 				\end{subfigure}	
-				\caption{Vergleich zwischen transformierten Shapes mit Vergrößerungsfaktor $s$, Drehwinkel $r$ und Translationsvektor $t=(t_x,t_y)$ und Original-Shape (grün, $s=1$, $r=0$, $t=(0,0)$) : Skalierung~(\ref{fig:s}), Rotation~(\ref{fig:r}), Translation~(\ref{fig:t}) und beliebige Transformation~(\ref{fig:mix}).}
+				\caption{Vergleich zwischen transformierten Shapes mit Vergrößerungsfaktor $s$, Drehwinkel $r$ und Translationsvektor $t=(t_x,t_y)$ und Original-Shape (grün, $s=1$, $r=0$, $t=(0,0)$): Skalierung~(\ref{fig:s}), Rotation~(\ref{fig:r}), Translation~(\ref{fig:t}) und beliebige Transformation~(\ref{fig:mix}).}
 				\label{fig:trafo}
 			\end{figure}
 			
@@ -139,9 +139,9 @@
 							\label{fig:featurePlot}
 						\end{figure}
 						
-					In Abbildung~\ref{fig:featurePlot} sind die für Bild 1 des Datensatzes \textit{handdata} berechneten Features graphisch dargestellt. In \ref{fig:g} sind die unveränderten Grauwerte zu sehen. \ref{fig:gradx} und \ref{fig:grady} stellen die daraus hergeleiteten Gradienten in x- und y-Richtung dar. Mit Hilfe dieser beiden Werte lässt sich die Stärke des Gradienten \ref{fig:m} berechnen. \\
-					Von den Haar-like wird nur das erste Feature, berechnet mit den Grauwerten \ref{fig:hgrey} und mit der Gradientenstärke \ref{fig:hgrad}, dargestellt.
-					Ein Pixel dieses Features ergibt sich folgendermaßen: Um das entsprechende Pixel im Originalbild wird ein Rechteck gelegt. Die Werte in der linken Hälfte des Rechtecks werden aufaddiert und davon die aufaddierten Werte der rechten Hälfte abgezogen. Der daraus resultierende Wert ist der neue Pixelwert. Den Unterschied zwischen der Berechnung aus den Grauwerten und der Berechnung aus der Gradientenstärke kann man am mittleren Knochen auf Höhe 200 erkennen. Im Grauwertbild hat der gesamte Knochen im Vergleich zur Umgebung erhöhte und halbwegs Werte, wodurch der Haar-like-Wert am linken Rand des Knochens hoch ist und sonst nirgends. Die Gradientenstärke ist an beiden Knochenrändern hoch und in der Mitte niedrig, wodurch der entsprechende Haar-like-Wert sowohl am linken als auch am rechten Knochenrand steigt und dann absinkt.
+					In Abbildung~\ref{fig:featurePlot} sind die für Bild 1 des Datensatzes \textit{handdata} berechneten Features graphisch dargestellt. In Abbildung~\ref{fig:g} sind die unveränderten Grauwerte zu sehen. Abbildung~\ref{fig:gradx} und \ref{fig:grady} stellen die daraus hergeleiteten Gradienten in x- und y-Richtung dar. Mit Hilfe dieser beiden Werte lässt sich die Stärke des Gradienten \ref{fig:m} berechnen. \\
+					Von den Haar-like wird nur das erste Feature, berechnet mit den Grauwerten (siehe Abbildung~\ref{fig:hgrey}) und mit der Gradientenstärke (siehe Abbildung~\ref{fig:hgrad}), dargestellt.
+					Ein Pixel dieses Features ergibt sich folgendermaßen: Um das entsprechende Pixel im Originalbild wird ein Rechteck gelegt. Die Werte in der rechten Hälfte des Rechtecks werden aufaddiert und davon die aufaddierten Werte der linken Hälfte abgezogen. Der daraus resultierende Wert ist der neue Pixelwert. Den Unterschied zwischen der Berechnung aus den Grauwerten und der Berechnung aus der Gradientenstärke kann man am mittleren Knochen auf Höhe 200 erkennen. Im Grauwertbild hat der gesamte Knochen im Vergleich zur Umgebung erhöhte und halbwegs gleichbleibende Werte, wodurch der Haar-like-Wert am linken Rand des Knochens hoch ist und sonst nirgends. Die Gradientenstärke ist an beiden Knochenrändern hoch und in der Mitte niedrig, wodurch der entsprechende Haar-like-Wert sowohl am linken als auch am rechten Knochenrand steigt und dann absinkt.
 					\\
 					Die letzten beiden Plots stellen jeweils die x- und die y-Koordinate des jeweiligen Pixels dar und sind damit bis auf die Bildgröße nicht vom jeweiligen Bild beeinflusst.
 						
@@ -149,7 +149,7 @@
 		\item Klassifikation und Feature-Selection
 			\begin{enumerate}
 				\setcounter{enumii}{1}
-				\item Abbildung~\ref{fig:oobErr} zeigt den Klassifikationsfehler für Random-Forests mit unterschiedlich vielen Bäumen. Generell erhöht sich mit einer größeren Anzahl an Bäumen auch die Genauigkeit der Klassifikation. Jedoch mit immer geringer werdendem Unterschied. Ab 40 Bäumen ist keine wesentliche Verbesserung mehr erkennbar, wenn die Anzahl der Bäume weiter erhöht wird.
+				\item Abbildung~\ref{fig:oobErr} zeigt den Klassifikationsfehler für Random-Forests mit unterschiedlich vielen Bäumen. Generell erhöht sich mit einer größeren Anzahl an Bäumen auch die Genauigkeit der Klassifikation, jedoch mit immer geringer werdendem Unterschied. Ab 40 Bäumen ist keine wesentliche Verbesserung mehr erkennbar, wenn die Anzahl der Bäume weiter erhöht wird.
 				\item Abbildung~\ref{fig:oobVar} zeigt den Einfluss der einzelnen Features auf den Klassifikationsfehler für verschiedene Random-Forests. Dieser variiert bei manchen Features - z.B. manchen Haar-Features - stark mit der Anzahl an Bäumen. Features mit insgesamt stärkstem Einfluss sind die Stärke des Gradienten (gradMag) und die Pixelkoordinaten (x,y), wobei die y-Koordinate stärkeren Einfluss hat als die x-Koordinate. Keinen Einfluss haben das 18.-20. Haar-Feature (grayHaar18-20, gradHaar18-20).
 			\setlength\figureheight{3.5cm}
 			\setlength\figurewidth{0.8\textwidth}
@@ -175,7 +175,7 @@
 			\begin{enumerate}
 				\setcounter{enumii}{3}
 				\item
-				Aufgrund der Ergebnisse von Aufgabe 3b und dem Beispielaufruf aus der Angabe, wurde die Anzahl der Bäume pro Random Forest auf 32 festgelegt. Würden wir mehr Bäume verwenden, könnte die Segmentiergenauigkeit der Methode verbessert werden, da die Vorhersage der Masks verbessert würde. Um die Rechenzeit gering zu halten, haben wir davon abgesehen, eine größere Zahl an Bäumen zu verwenden.\\
+				Aufgrund der Ergebnisse von Aufgabe 3b und dem Beispielaufruf aus der Angabe wurde die Anzahl der Bäume pro Random Forest auf 32 festgelegt. Würden wir mehr Bäume verwenden, könnte die Segmentiergenauigkeit der Methode verbessert werden, da die Vorhersage der Masks verbessert würde. Um die Rechenzeit gering zu halten, haben wir davon abgesehen, eine größere Zahl an Bäumen zu verwenden.\\
 				Bei der Optimierungsfunktion musste der Parameterbereich der Optimierung mit Minimum und Maximum beschränkt werden. Wird der Bereich ungeschickt gewählt, so kann es passieren, dass die Optimierungsfunktion nur ein lokales Minimum findet. Wird zBsp der Bereich für die Rotation von minimal $0^\circ$ bis maximal $359^\circ$ festgelegt, werden häufig Rotationen von $~180^\circ$ als Optimum gefunden (siehe Abbildung~\ref{fig:image31_wrongRotationRange180}).
 				Wird der Bereich von $-180^\circ$ bis $+180^\circ$ definiert, ist dies nicht mehr der Fall.\\
 				Außerdem kann bei der Rotation angenommen werden, dass die Knochen nicht um $90^\circ$ gedreht im Bild liegen. Beschränkt man die Rotation auf Werte von bis zu $50^\circ$ in beide Richtungen, kommt es nicht zu Fehloptimierungen wie in Abbildung~\ref{fig:image31_wrongRotationRange90}.\\
