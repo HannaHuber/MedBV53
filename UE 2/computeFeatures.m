@@ -35,13 +35,13 @@ maggradMatrix= reshape(maggrad,dim(1), dim(2)); % vec2mat(maggrad,dim(1))';
 imageFeatures(25:44,:)=computeHaarLike(maggradMatrix);
 
 % x- and y- coordinates of a pixel
-dimensionVectorXshort=1:dim(1);
-dimensionVectorX=repmat(dimensionVectorXshort,1,dim(2));
-imageFeatures(45,:)=dimensionVectorX;
+dimensionVectorXshort=1:dim(2);
+dimensionVectorX=repmat(dimensionVectorXshort,dim(1),1);
+imageFeatures(45,:)=dimensionVectorX(:)';
 
-dimensionVectorYshort=1:dim(2);
-dimensionMatrixY=repmat(dimensionVectorYshort,dim(1),1);
-imageFeatures(46,:)=dimensionMatrixY(:)';
+dimensionVectorYshort=1:dim(1);
+dimensionMatrixY=repmat(dimensionVectorYshort,1,dim(2));
+imageFeatures(46,:)=dimensionMatrixY;
 
 
 end
