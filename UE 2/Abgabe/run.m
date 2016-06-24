@@ -143,7 +143,7 @@ legend(strcat(num2str(nTSelected(1)),' trees'), ...
 %%
 % info: 1.-5. EV = 97,46 proz. & 1.-4. EV = 96,34 proz. & 1.-9. EV = 99,02
 % proz.
-[bestP,time] = optimizeP;
+[bestP,time, predMaks] = optimizeP;
 %
 performance=zeros(64,20);
 for i=1:20
